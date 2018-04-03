@@ -35,8 +35,8 @@
 #include "reduction_cpu.h"
 //////////////////////////////////////////////////////////////////////////
 
-#define MEM_GLOBAL	0
-#define MEM_LOCAL	1
+#define USING_GLOBAL_MEMORY	0
+#define USING_LOCAL_MEMORY	1
 
 
 typedef struct _OPENCL_C_PROG_SRC {
@@ -90,9 +90,10 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 	errcode_ret = clBuildProgram(program, 1, &devices, NULL, NULL, NULL);
 	CHECK_ERROR_CODE(errcode_ret);
 
+
 	fprintf(stdout, "\n > On Global Memory\n");
 
-	kernel[MEM_GLOBAL] = clCreateKernel(program, "reduction_1d_global", &errcode_ret);
+	kernel[USING_GLOBAL_MEMORY] = clCreateKernel(program, "reduction_1d_global", &errcode_ret);
 	CHECK_ERROR_CODE(errcode_ret);
 		
 	buffer_data = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float)*n_elements, NULL, &errcode_ret);
@@ -114,15 +115,15 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 
 	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 
-	errcode_ret = clSetKernelArg(kernel[MEM_GLOBAL], 0, sizeof(cl_mem), &buffer_data);
+	errcode_ret = clSetKernelArg(kernel[USING_GLOBAL_MEMORY], 0, sizeof(cl_mem), &buffer_data);
 	CHECK_ERROR_CODE(errcode_ret);
-	errcode_ret = clSetKernelArg(kernel[MEM_GLOBAL], 1, sizeof(cl_mem), &buffer_output);
+	errcode_ret = clSetKernelArg(kernel[USING_GLOBAL_MEMORY], 1, sizeof(cl_mem), &buffer_output);
 	CHECK_ERROR_CODE(errcode_ret);
 
 	fprintf(stdout, "   [Kernel Execution] \n");
 
 	CHECK_TIME_START;
-	errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[MEM_GLOBAL], 1, NULL, &n_elements, &work_group_size, 0, NULL, &event_for_timing);
+	errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[USING_GLOBAL_MEMORY], 1, NULL, &n_elements, &work_group_size, 0, NULL, &event_for_timing);
 	CHECK_ERROR_CODE(errcode_ret);
 	clFinish(cmd_queues);  // What would happen if this line is removed?
 									  // or clWaitForEvents(1, &event_for_timing);
@@ -153,7 +154,7 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 
 	fprintf(stdout, "\n > On Local Memory\n");
 
-	kernel[MEM_LOCAL] = clCreateKernel(program, "reduction_1d_local", &errcode_ret);
+	kernel[USING_LOCAL_MEMORY] = clCreateKernel(program, "reduction_1d_local", &errcode_ret);
 	CHECK_ERROR_CODE(errcode_ret);
 
 	//buffer_data = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float)*n_elements, NULL, &errcode_ret);
@@ -178,17 +179,17 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 
 	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 
-	errcode_ret = clSetKernelArg(kernel[MEM_LOCAL], 0, sizeof(cl_mem), &buffer_data);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 0, sizeof(cl_mem), &buffer_data);
 	CHECK_ERROR_CODE(errcode_ret);
-	errcode_ret = clSetKernelArg(kernel[MEM_LOCAL], 1, sizeof(cl_float) * work_group_size, NULL);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 1, sizeof(cl_float) * work_group_size, NULL);
 	CHECK_ERROR_CODE(errcode_ret);
-	errcode_ret = clSetKernelArg(kernel[MEM_LOCAL], 2, sizeof(cl_mem), &buffer_output);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 2, sizeof(cl_mem), &buffer_output);
 	CHECK_ERROR_CODE(errcode_ret);
 
 	fprintf(stdout, "   [Kernel Execution] \n");
 
 	CHECK_TIME_START;
-	errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[MEM_LOCAL], 1, NULL, &n_elements, &work_group_size, 0, NULL, &event_for_timing);
+	errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[USING_LOCAL_MEMORY], 1, NULL, &n_elements, &work_group_size, 0, NULL, &event_for_timing);
 	CHECK_ERROR_CODE(errcode_ret);
 	clFinish(cmd_queues);  // What would happen if this line is removed?
 						   // or clWaitForEvents(1, &event_for_timing);
@@ -220,8 +221,8 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 	clReleaseMemObject(buffer_data);
 	//clReleaseMemObject(buffer_partial_sum);
 	clReleaseMemObject(buffer_output);
-	clReleaseKernel(kernel[MEM_GLOBAL]);
-	clReleaseKernel(kernel[MEM_LOCAL]);
+	clReleaseKernel(kernel[USING_GLOBAL_MEMORY]);
+	clReleaseKernel(kernel[USING_LOCAL_MEMORY]);
 	clReleaseProgram(program);
 	clReleaseCommandQueue(cmd_queues);
 	clReleaseContext(context);
@@ -242,8 +243,8 @@ void reduction_1D(size_t work_group_size) {
 	float general_cpu_result;
 	float *opencl_gpu_result;
 
-	//n_elements = 128 * 1024 * 1024;
-	n_elements = 512 * 1024;
+	n_elements = 128 * 1024 * 1024;
+	//n_elements = 512 * 1024;
 
 	data = (float*)malloc(sizeof(float)*n_elements);
 
@@ -272,11 +273,21 @@ void reduction_1D(size_t work_group_size) {
 }
 
 
+float* reduction_2D_OpenCL(float **data, size_t* elements_size, size_t work_group_size) {
+	return NULL;
+}
+
+
+void reduction_2D(size_t work_group_size) {
+
+}
+
 
 int main(void) {
 	size_t work_group_size;
-	work_group_size = 32;
+	work_group_size = 128;
 
+	fprintf(stdout, "=== Reduction On One Dimmension ===\n\n");
 	reduction_1D(work_group_size);
 }
 
