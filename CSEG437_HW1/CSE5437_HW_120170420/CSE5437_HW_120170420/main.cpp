@@ -38,6 +38,10 @@
 #define USING_GLOBAL_MEMORY	0
 #define USING_LOCAL_MEMORY	1
 
+#define ARRAY_ELEMENTS_SIZE	128 * 1024 * 1024
+#define MATRIX_ROW_SIZE		32 * 1024
+#define MATRIX_COL_SIZE		32 * 1024
+
 
 typedef struct _OPENCL_C_PROG_SRC {
 	size_t length;
@@ -143,7 +147,7 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 	CHECK_ERROR_CODE(errcode_ret);
 
 	result[0] = 0.0f;
-	reduction_on_the_cpu_reduction(output, &result[0], n_work_group);
+	reduction_1d_on_the_cpu_reduction(output, &result[0], n_work_group);
 
 	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	print_device_time(event_for_timing);
@@ -209,7 +213,7 @@ float* reduction_1D_OpenCL(float *data, size_t n_elements, size_t work_group_siz
 	CHECK_ERROR_CODE(errcode_ret);
 
 	result[1] = 0.0f;
-	reduction_on_the_cpu_reduction(output, &result[1], n_work_group);
+	reduction_1d_on_the_cpu_reduction(output, &result[1], n_work_group);
 
 	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	print_device_time(event_for_timing);
@@ -243,12 +247,11 @@ void reduction_1D(size_t work_group_size) {
 	float general_cpu_result;
 	float *opencl_gpu_result;
 
-	n_elements = 128 * 1024 * 1024;
-	//n_elements = 512 * 1024;
+	n_elements = ARRAY_ELEMENTS_SIZE;
 
 	data = (float*)malloc(sizeof(float)*n_elements);
 
-	fprintf(stdout, "^^^ Generating random input arrays with %d elements each...\n", (int)n_elements);
+	fprintf(stdout, "^^^ Generating random input array with %d elements...\n", (int)n_elements);
 	srand((unsigned int)201803); // Always the same input data
 	for (int i = 0; i < (int)n_elements; i++)
 		data[i] = 3.1415926f*((float)rand() / RAND_MAX);
@@ -257,9 +260,9 @@ void reduction_1D(size_t work_group_size) {
 	fprintf(stdout, "\n- General CPU computation ^^^\n");
 	fprintf(stdout, "   [CPU Execution] \n");
 	CHECK_TIME_START;
-	//reduition_on_the_cpu(data, output, (int)n_elements);
-	//reduction_on_the_cpu_reduction(data, output, (int)n_elements);
-	reduction_on_the_CPU_KahanSum(data, &general_cpu_result, (int)n_elements);
+	//reduition_1d_on_the_cpu(data, output, (int)n_elements);
+	//reduction_1d_on_the_cpu_reduction(data, output, (int)n_elements);
+	reduction_1d_on_the_cpu_KahanSum(data, &general_cpu_result, (int)n_elements);
 	CHECK_TIME_END(compute_time);
 
 	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
@@ -279,7 +282,48 @@ float* reduction_2D_OpenCL(float **data, size_t* elements_size, size_t work_grou
 
 
 void reduction_2D(size_t work_group_size) {
+	float **data;
+	size_t elements_size[2];
+	size_t n_row, n_col;
 
+	float compute_time;
+	float general_cpu_result;
+	float *opencl_gpu_result;
+
+	elements_size[0] = n_row = MATRIX_ROW_SIZE;	// Matrix Row
+	elements_size[1] = n_col = MATRIX_COL_SIZE;	// Matrix Column
+
+	data = (float**)malloc(sizeof(float*)*n_row);
+
+	fprintf(stdout, "^^^ Generating random input matrix with (%d, %d) elements...\n", (int)n_row, (int)n_col);
+	srand((unsigned int)201803); // Always the same input data
+	for (int i = 0; i < n_row; i++) {
+		data[i] = (float*)malloc(sizeof(float)*n_col);
+		
+		for (int j = 0; j < (int)n_col; j++)
+			data[i][j] = 3.1415926f*((float)rand() / RAND_MAX);
+	}
+	fprintf(stdout, "^^^ Done!\n");
+
+	fprintf(stdout, "\n- General CPU computation ^^^\n");
+	fprintf(stdout, "   [CPU Execution] \n");
+	CHECK_TIME_START;
+	//reduction_2d_on_the_cpu(data, &general_cpu_result, n_row, n_col);
+	//reduction_2d_on_the_cpu_reduction(data, &general_cpu_result, n_row, n_col);
+	reduction_2d_on_the_cpu_KahanSum(data, &general_cpu_result, n_row, n_col);
+	fprintf(stdout, "     * Output = %f\n\n", general_cpu_result);
+	CHECK_TIME_END(compute_time);
+
+	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
+	fprintf(stdout, "   [Check Results] \n");
+	fprintf(stdout, "     * Output = %f\n\n", general_cpu_result);
+
+	fprintf(stdout, "\n- Computing on OpenCL GPU Device ^^^\n");
+	opencl_gpu_result = reduction_2D_OpenCL(data, elements_size, work_group_size);
+
+	for (int i = 0; i < n_row; i++)
+		free(data[i]);
+	free(data);
 }
 
 
@@ -289,5 +333,10 @@ int main(void) {
 
 	fprintf(stdout, "=== Reduction On One Dimmension ===\n\n");
 	reduction_1D(work_group_size);
+
+	fprintf(stdout, "\n\n");
+
+	fprintf(stdout, "=== Reduction On Two Dimmension ===\n\n");
+	reduction_2D(work_group_size);
 }
 
