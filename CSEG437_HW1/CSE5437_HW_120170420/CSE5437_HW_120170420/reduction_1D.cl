@@ -1,6 +1,5 @@
 __kernel
-//void reduction_1d_global(__global float *data, __global float *partial_sums, __global float *output) {
-void reduction_1d_global(__global float *data, __global float* output) {
+void reduction_global(__global float* data, __global float* output) {
 	int local_id = get_local_id(0);
 	int global_id = get_global_id(0);
 	int group_size = get_local_size(0);
@@ -21,7 +20,7 @@ void reduction_1d_global(__global float *data, __global float* output) {
 
 
 __kernel
-void reduction_1d_local(__global float *data, __local float* partial_sums, __global float* output) {
+void reduction_local(__global float* data, __local float* partial_sums, __global float* output) {
 	int local_id = get_local_id(0);
 	int group_size = get_local_size(0);
 
