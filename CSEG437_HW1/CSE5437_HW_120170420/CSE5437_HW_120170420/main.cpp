@@ -294,7 +294,10 @@ float* reduction_2D_OpenCL(float *data, size_t* elements_size, size_t* work_grou
 
 	n_elements = elements_size[0] * elements_size[1];
 	work_group_area = work_group_size[0] * work_group_size[1];
-	n_work_group = elements_size[0] / work_group_area;
+	n_work_group = n_elements / work_group_size[1];
+
+	printf("%d\n", n_work_group);
+
 	output = (float*)malloc(sizeof(float)*n_work_group);
 
 	errcode_ret = clGetPlatformIDs(1, &platform, NULL);
@@ -382,77 +385,77 @@ float* reduction_2D_OpenCL(float *data, size_t* elements_size, size_t* work_grou
 	fprintf(stdout, "     * Output = %f\n\n", result[0]);
 
 
-	//fprintf(stdout, "\n > On Local Memory\n");
+	fprintf(stdout, "\n > On Local Memory\n");
 
-	//kernel[USING_LOCAL_MEMORY] = clCreateKernel(program, "reduction_local", &errcode_ret);
+	kernel[USING_LOCAL_MEMORY] = clCreateKernel(program, "reduction_local", &errcode_ret);
+	CHECK_ERROR_CODE(errcode_ret);
+
+	//buffer_data = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float)*n_elements, NULL, &errcode_ret);
 	//CHECK_ERROR_CODE(errcode_ret);
 
-	////buffer_data = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(float)*n_elements, NULL, &errcode_ret);
-	////CHECK_ERROR_CODE(errcode_ret);
-
-	////buffer_partial_sum = clCreateBuffer(context, CL_MEM_WRITE_ONLY, sizeof(float)*work_items, NULL, &errcode_ret);
-	////CHECK_ERROR_CODE(errcode_ret);
-
-	////buffer_output = clCreateBuffer(context, CL_MEM_WRITE_ONLY, sizeof(float)*n_work_group, NULL, &errcode_ret);
-	////CHECK_ERROR_CODE(errcode_ret);
-
-	//fprintf(stdout, "   [Data Transfer Host to Devece(GPU)] \n");
-
-	//CHECK_TIME_START;
-	//// Move the input data from the host memory to the GPU device memory.
-	//errcode_ret = clEnqueueWriteBuffer(cmd_queues, buffer_data, CL_FALSE, 0, sizeof(float)*n_elements, data, 0, NULL, NULL);
+	//buffer_partial_sum = clCreateBuffer(context, CL_MEM_WRITE_ONLY, sizeof(float)*work_items, NULL, &errcode_ret);
 	//CHECK_ERROR_CODE(errcode_ret);
 
-	//clFinish(cmd_queues); // What if this line is removed?
-	//CHECK_TIME_END(compute_time);
+	//buffer_output = clCreateBuffer(context, CL_MEM_WRITE_ONLY, sizeof(float)*n_work_group, NULL, &errcode_ret);
 	//CHECK_ERROR_CODE(errcode_ret);
 
-	//fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
+	fprintf(stdout, "   [Data Transfer Host to Devece(GPU)] \n");
 
-	//errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 0, sizeof(cl_mem), &buffer_data);
-	//CHECK_ERROR_CODE(errcode_ret);
-	//errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 1, sizeof(cl_float) * work_group_area, NULL);
-	//CHECK_ERROR_CODE(errcode_ret);
-	//errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 2, sizeof(cl_mem), &buffer_output);
-	//CHECK_ERROR_CODE(errcode_ret);
+	CHECK_TIME_START;
+	// Move the input data from the host memory to the GPU device memory.
+	errcode_ret = clEnqueueWriteBuffer(cmd_queues, buffer_data, CL_FALSE, 0, sizeof(float)*n_elements, data, 0, NULL, NULL);
+	CHECK_ERROR_CODE(errcode_ret);
 
-	//fprintf(stdout, "   [Kernel Execution] \n");
+	clFinish(cmd_queues); // What if this line is removed?
+	CHECK_TIME_END(compute_time);
+	CHECK_ERROR_CODE(errcode_ret);
 
-	//CHECK_TIME_START;
-	//errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[USING_LOCAL_MEMORY], 2, NULL, &n_elements, work_group_size, 0, NULL, &event_for_timing);
-	//CHECK_ERROR_CODE(errcode_ret);
-	//clFinish(cmd_queues);  // What would happen if this line is removed?
-	//					   // or clWaitForEvents(1, &event_for_timing);
-	//CHECK_TIME_END(compute_time);
-	//CHECK_ERROR_CODE(errcode_ret);
+	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 
-	//fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
-	//print_device_time(event_for_timing);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 0, sizeof(cl_mem), &buffer_data);
+	CHECK_ERROR_CODE(errcode_ret);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 1, sizeof(cl_float) * work_group_area, NULL);
+	CHECK_ERROR_CODE(errcode_ret);
+	errcode_ret = clSetKernelArg(kernel[USING_LOCAL_MEMORY], 2, sizeof(cl_mem), &buffer_output);
+	CHECK_ERROR_CODE(errcode_ret);
 
-	//fprintf(stdout, "   [Data Transfer Device to Host] \n");
+	fprintf(stdout, "   [Kernel Execution] \n");
 
-	//memset(output, 0, sizeof(float)*n_work_group);
+	CHECK_TIME_START;
+	errcode_ret = clEnqueueNDRangeKernel(cmd_queues, kernel[USING_LOCAL_MEMORY], 2, NULL, elements_size, work_group_size, 0, NULL, &event_for_timing);
+	CHECK_ERROR_CODE(errcode_ret);
+	clFinish(cmd_queues);  // What would happen if this line is removed?
+						   // or clWaitForEvents(1, &event_for_timing);
+	CHECK_TIME_END(compute_time);
+	CHECK_ERROR_CODE(errcode_ret);
 
-	//CHECK_TIME_START;
-	//errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
-	//CHECK_TIME_END(compute_time);
-	//CHECK_ERROR_CODE(errcode_ret);
+	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
+	print_device_time(event_for_timing);
 
-	//result[1] = 0.0f;
-	//reduction_1d_on_the_cpu_reduction(output, &result[1], n_work_group);
+	fprintf(stdout, "   [Data Transfer Device to Host] \n");
 
-	//fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
-	//print_device_time(event_for_timing);
+	memset(output, 0, sizeof(float)*n_work_group);
 
-	//fprintf(stdout, "   [Check Results] \n");
-	//fprintf(stdout, "     * Output = %f\n\n", result[1]);
+	CHECK_TIME_START;
+	errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
+	CHECK_TIME_END(compute_time);
+	CHECK_ERROR_CODE(errcode_ret);
+
+	result[1] = 0.0f;
+	reduction_1d_on_the_cpu_reduction(output, &result[1], n_work_group);
+
+	fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
+	print_device_time(event_for_timing);
+
+	fprintf(stdout, "   [Check Results] \n");
+	fprintf(stdout, "     * Output = %f\n\n", result[1]);
 
 	/* Free OpenCL resources. */
 	clReleaseMemObject(buffer_data);
 	//clReleaseMemObject(buffer_partial_sum);
 	clReleaseMemObject(buffer_output);
 	clReleaseKernel(kernel[USING_GLOBAL_MEMORY]);
-	//clReleaseKernel(kernel[USING_LOCAL_MEMORY]);
+	clReleaseKernel(kernel[USING_LOCAL_MEMORY]);
 	clReleaseProgram(program);
 	clReleaseCommandQueue(cmd_queues);
 	clReleaseContext(context);
@@ -474,8 +477,8 @@ void reduction_2D() {
 	float general_cpu_result;
 	float *opencl_gpu_result;
 
-	elements_size[0] = n_row = 1024;	// Matrix Row
-	elements_size[1] = n_col = 1024;	// Matrix Column
+	elements_size[0] = n_row = 2048;	// Matrix Row
+	elements_size[1] = n_col = 2048;	// Matrix Column
 	work_group_size[0] = 32;
 	work_group_size[1] = 32;
 
