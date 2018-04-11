@@ -296,8 +296,6 @@ float* reduction_2D_OpenCL(float *data, size_t* elements_size, size_t* work_grou
 	work_group_area = work_group_size[0] * work_group_size[1];
 	n_work_group = n_elements / work_group_size[1];
 
-	printf("%d\n", n_work_group);
-
 	output = (float*)malloc(sizeof(float)*n_work_group);
 
 	errcode_ret = clGetPlatformIDs(1, &platform, NULL);
@@ -477,8 +475,8 @@ void reduction_2D() {
 	float general_cpu_result;
 	float *opencl_gpu_result;
 
-	elements_size[0] = n_row = 2048;	// Matrix Row
-	elements_size[1] = n_col = 2048;	// Matrix Column
+	elements_size[0] = n_row = 2 * 1024;	// Matrix Row
+	elements_size[1] = n_col = 4 * 1024;	// Matrix Column
 	work_group_size[0] = 32;
 	work_group_size[1] = 32;
 
@@ -517,10 +515,10 @@ int main(void) {
 	size_t work_group_size;
 	work_group_size = 128;
 
-	//fprintf(stdout, "=== Reduction On One Dimmension ===\n\n");
-	//reduction_1D();
+	fprintf(stdout, "=== Reduction On One Dimmension ===\n\n");
+	reduction_1D();
 
-	//fprintf(stdout, "\n\n");
+	fprintf(stdout, "\n\n");
 
 	fprintf(stdout, "=== Reduction On Two Dimmension ===\n\n");
 	reduction_2D();
