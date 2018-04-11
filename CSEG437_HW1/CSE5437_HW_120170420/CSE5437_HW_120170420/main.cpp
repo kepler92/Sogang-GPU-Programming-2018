@@ -132,7 +132,7 @@ REDUCTION_RESULT* reduction_1D_OpenCL(float *data, size_t n_elements, size_t wor
 	float total_time;
 	float kernel_time;
 
-	n_work_group = n_elements / work_group_size;
+	n_work_group = (int)n_elements / (int)work_group_size;
 	output = (float*)malloc(sizeof(float)*n_work_group);
 
 	total_time = 0.0f;
@@ -211,11 +211,13 @@ REDUCTION_RESULT* reduction_1D_OpenCL(float *data, size_t n_elements, size_t wor
 
 	CHECK_TIME_START;
 	errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
-	CHECK_TIME_END(compute_time); total_time += compute_time;
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 	CHECK_ERROR_CODE(errcode_ret);
 
 	sum_output = 0.0f;
+	CHECK_TIME_START;
 	reduction_1d_on_the_cpu_reduction(output, &sum_output, n_work_group);
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 
 	if(IS_DEBUG) fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	if(IS_DEBUG) print_device_time(event_for_timing);
@@ -283,11 +285,13 @@ REDUCTION_RESULT* reduction_1D_OpenCL(float *data, size_t n_elements, size_t wor
 
 	CHECK_TIME_START;
 	errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
-	CHECK_TIME_END(compute_time); total_time += compute_time;
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 	CHECK_ERROR_CODE(errcode_ret);
 
 	sum_output = 0.0f;
+	CHECK_TIME_START;
 	reduction_1d_on_the_cpu_reduction(output, &sum_output, n_work_group);
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 
 	if(IS_DEBUG) fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	if(IS_DEBUG) print_device_time(event_for_timing);
@@ -424,11 +428,13 @@ REDUCTION_RESULT* reduction_2D_OpenCL(float *data, size_t* elements_size, size_t
 
 	CHECK_TIME_START;
 	errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
-	CHECK_TIME_END(compute_time); total_time += compute_time;
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 	CHECK_ERROR_CODE(errcode_ret);
 
 	sum_output = 0.0f;
+	CHECK_TIME_START;
 	reduction_1d_on_the_cpu_reduction(output, &sum_output, n_work_group);
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 
 	if(IS_DEBUG) fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	if(IS_DEBUG) print_device_time(event_for_timing);
@@ -496,11 +502,13 @@ REDUCTION_RESULT* reduction_2D_OpenCL(float *data, size_t* elements_size, size_t
 
 	CHECK_TIME_START;
 	errcode_ret = clEnqueueReadBuffer(cmd_queues, buffer_output, CL_TRUE, 0, sizeof(float)*n_work_group, output, 0, NULL, &event_for_timing);
-	CHECK_TIME_END(compute_time); total_time += compute_time;
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 	CHECK_ERROR_CODE(errcode_ret);
 
 	sum_output = 0.0f;
+	CHECK_TIME_START;
 	reduction_1d_on_the_cpu_reduction(output, &sum_output, n_work_group);
+	CHECK_TIME_END(compute_time); total_time += compute_time; kernel_time += compute_time;
 
 	if(IS_DEBUG) fprintf(stdout, "     * Time by host clock = %.3fms\n\n", compute_time);
 	if(IS_DEBUG) print_device_time(event_for_timing);
@@ -634,6 +642,10 @@ void reduction_2D() {
 
 
 int main(void) {
+	if (1) {
+		show_OpenCL_platform();
+	}
+
 	printf("=== Reduction; One-Dimmension Data ===\n\n");
 	reduction_1D();
 
