@@ -132,7 +132,7 @@ REDUCTION_RESULT* reduction_1D_OpenCL(float *data, size_t n_elements, size_t wor
 	float total_time;
 	float kernel_time;
 
-	n_work_group = (int)n_elements / (int)work_group_size;
+	n_work_group = n_elements / work_group_size;
 	output = (float*)malloc(sizeof(float)*n_work_group);
 
 	total_time = 0.0f;
