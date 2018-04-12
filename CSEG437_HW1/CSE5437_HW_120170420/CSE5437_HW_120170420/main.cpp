@@ -642,9 +642,7 @@ void reduction_2D() {
 
 
 int main(void) {
-	if (1) {
-		show_OpenCL_platform();
-	}
+	//show_OpenCL_platform();
 
 	printf("=== Reduction; One-Dimmension Data ===\n\n");
 	reduction_1D();
