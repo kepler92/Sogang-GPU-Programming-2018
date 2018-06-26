@@ -1,0 +1,48 @@
+Future technology of mobile phones: What's next?
+
+At Mobile World Congress 2018 in Barcelona, all the buzz was about the future technology of mobile phones. On the surface, smartphones might seem to evolve slowly — after all, last year’s Mobile World Congress saw us going backward with the Nokia 3310. Beyond that, compare a first-generation iPhone circa 2007 to today’s iPhone 8 or iPhone X. Sure, the latter are bigger, thinner and sleeker, but they have the same rounded edges, home screen and icon layout.
+
+But don’t judge iPhones, or any other smartphones, by their covers. What’s inside has evolved so much more substantially. With each innovation in sensor technology, cameras, wireless functionality and even manufacturing materials, smartphones have become capable of smarter and smarter tasks, paving the way for the future technology of mobile phones.
+
+What is next for mobile phones? What will your smartphone be like in 2020 or 2030? What can you expect to see at Mobile World Congress 2019?
+
+Based on industry research and emerging technology, here are five predictions for the future technology of mobile phones:
+
+1. The future technology of mobile phones: Your phone will recognize you
+For years, device manufacturers have been exploring ways to beef up device security while letting users bypass that pesky PIN. Many devices now feature fingerprint or iris scanners, both of which have proven to be hackable.
+
+Early experiments in facial recognition were also underwhelming, as that technology could be fooled by a photo of the user’s face. New and emerging facial recognition technology doesn’t just scan facial features, reports the New York Times; it also scans the contours of a person’s face and head, making the software much harder to fool.
+
+Facial recognition could become the new gold standard for device unlocking, but as smartphone sensors continue to evolve, your phone might eventually recognize you without scanning you. Instead, it will look for other unique attributes, such as the tone of your voice, the way you move or the pattern of your typing.
+
+2. Your phone will shift reality
+Imagine shopping online and being able to look through your phone to see exactly how that new bookshelf would look in your office, or what that new coat would look like on your son or daughter.
+
+Augmented reality (AR) has already made a splash in the gaming world, but future technology of mobile phones could take AR mainstream in industries including retail, tech support and healthcare.
+
+Several mobile device manufacturers have already released AR toolkits for mobile app development. The toolkits enable app developers to access a device’s camera and motion sensors and create apps that lay digital objects on top of the camera’s live view and move them around with precision.
+
+As this technology continues to evolve, the next step is smartphones that don’t simply capture and alter images, but also project them into the real world. Digital projectors and holographic displays are already in development, reports T3, but it will likely be several years before this technology is inexpensive and reliable enough for large-scale use.
+
+Both AR and virtual reality (VR) will be hot topics at Mobile World Congress 2018, during the conference and in the exhibition center. The NEXTech Hall 8.0 will feature the latest advances in VR/AR, robotics, drones and artificial intelligence.
+
+3. Your phone will be more durable, flexible and maybe even foldable
+In a few years it will become very difficult to break your phone, and you might finally be able to fold it up and put it your pocket. According to Fortune, after years of hype about flexible smartphone screens, this could be the year that one finally hits the market.
+
+Macworld recently reported that device manufacturers are also experimenting with new ways to strengthen the glass used for smartphone screens. Some wearable devices already use sapphire glass, and researchers are making significant breakthroughs on self-healing screens and an even more durable material called graphene glass. Mobile World Congress 2018 dedicated an entire exhibition space, called the Graphene Pavilion, to demonstrations and discussions about how this material will transform the mobile industry.
+
+4. You won’t need to charge your phone as often, and you won’t need a charger
+Battery life on mobile devices has always been a chief complaint among consumers. With each new model, manufacturers attempt to improve the battery, but they also add faster processors, which drain more energy.
+
+To solve this problem, device manufacturers are experimenting with a variety of possible solutions such as nanobatteries, hydrogen fuel cells, solar power and even kinetic energy — meaning your phone will charge as you move around.
+
+However your future phone’s battery works, it will certainly charge faster and probably wirelessly, eliminating the need for a charging port. Some device manufacturers have already made it possible to charge their latest devices wirelessly, but so far, the ports remain. That will likely change in the coming years as consumers become more accustomed to wireless charging — and as coffee shops and other businesses begin to install wireless charging units for customer use.
+
+Furniture makers have also been thinking about wireless charging. During Mobile World Congress 2015, IKEA announced plans to start building wireless charging stations into home decor.
+
+5. You’ll use virtual buttons and virtual assistants
+Manufacturers have been expanding screen size for years, but the smartphone of the future will likely be all screen, with display capabilities on the front, back and sides of the device. That means no physical buttons, not even a home button.
+
+As the device becomes increasingly virtual and streamlined, so will the user interface. Virtual assistants will take on a bigger role, helping you navigate your phone and apps, personalizing your home screen based on your patterns. Thanks to advances in artificial intelligence, these assistants are also becoming smarter and more intuitive.
+
+What will your smartphone look like in 2020 and beyond? These developments are likely where the trends are heading, but disruption happens quickly, it’s impossible to say for sure.

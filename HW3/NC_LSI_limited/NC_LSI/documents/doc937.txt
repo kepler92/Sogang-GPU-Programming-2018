@@ -1,0 +1,69 @@
+Magic Leap bounds into SF's Games Developer Conference and... disappears
+Our intrepid reporter tries to track down mystery tech
+
+GDC After months – no, years – of Magic Leap promising to revolutionize the gaming world with its augmented reality technology, this week the company finally launched… sort of.
+
+Magic Leap released its software developers kit (SDK) in the hope of persuading developers to create new games for its platform. Soon after, it announced it was partnering with the two industry standard games engines – Unreal and Unity – in that effort.
+
+Ignoring for a second the fact that the company first promised to release its SDK three years ago, that is an important step forward. And the announcements were timed to coincide with games industry mega-meeting Games Developers Conference (GDC) in San Francisco, USA, this week.
+
+So we went along to GDC to talk to this mysterious company that has taken in billions of dollars in investment over the past seven years, been featured constantly in the press, put out videos promising great things, yet never produced an actual product. We were, predictably, disappointed.
+
+
+
+Despite announcing it was at GDC, Magic Leap doesn't have a booth here and is not a sponsor. However, having walked the entire, vast Moscone conference center, we discover the company had tacked itself onto its new partner – Epic and its Unreal Engine.
+
+Unreal has one of the four super-spaces in the GDC exhibition hall, alongside Sony (PlayStation), Amazon and Facebook (Oculus). Magic Leap is set up on one edge of Unreal's space with a small sign, four chairs and a coffee table.
+
+As attendees poured in by their thousands to play games and talk shop, Magic Leap's area remained defiantly empty. Soon, people started treating it as a hangout space. But then three Magic Leap employees, complete with branded T-shirts arrived and laid out their wares: a brochure, a card and some stickers.
+
+Meet Mike
+We went to one – a lovely guy named Mike who, it turned out, was a recruiter and hoping to encourage people to apply to one of the 17 jobs currently available at Magic Leap (including Technical Director and lots of senior engineers).
+
+But Mike told us he knew nothing at all about the company's actual product. He does know that there was an announcement this week – and he pulls out his phone to find it. "I don't know anything beyond what's on the website," he explains.
+
+We ask if there is a demo available. No. But, he offers, here's what it looks like – and scrolls through on his phone until he hits the press shot of a young man wearing what Magic Leap claims is its product.
+
+Have you tried it, we ask. Oh yeah. And? It's awesome was the response. Does it look like the picture? Yeah, sure. And then Mike tells us he's not allowed to say anything more.
+
+Much of the excitement around the company is for its hardware. The company claims to have created a lightweight, wireless headset that will project high-definition images in 3D space: you look through the glasses to the real world and see computer-generated images positioned realistically in it.
+
+That is an extremely hard thing to do, which is why even huge companies like Microsoft are struggling with it. But Magic Leap has never demoed its hardware outside its own headquarters in Florida, and anyone that goes there has to sign a legal agreement saying they won't talk about it before they are allowed to try it on.
+
+Magic Leap and its CEO Rony Abovitz has made much of this extreme secrecy, using it to build up hype and expectation. And it has worked, again and again, for years. The Register's take is much simpler: the hardware just doesn't work well enough.
+
+But, you know, Mike says it's awesome.
+
+Epic!
+At the same time as we're at the Magic Leap sofa, the company's partnership with a serious player in the industry, Epic Games, is being touted, albeit briefly, in a theater across the road.
+
+It's no more than a single slide in a much larger presentation by Epic CTO Kim Libreri, but it's enough for Magic Leap's fanbois to snap and tweet and get overly excited about.
+
+This is Epic's busy day at GDC and their execs are jammed. We visit the biz's vast two-storey booth (one of two at GDC) and ask to talk about the Magic Leap partnership. An employee takes our card and promises to try to find someone, but makes it plain it probably won't happen today.
+
+
+
+Not a problem, because Magic Leap has also partnered with Unity – and that outfit has a room on the second floor. We talk to the game engine's reps, and they promise to connect us up with a key engineer and technology evangelist.
+
+Ten minutes and later we sit down with Madhur Gupta. Another smart, lovely man... whose face immediately drains when we mention Magic Leap. "I think the best person to speak it is at our headquarters," he said, directing us to an address about 10 minutes walk away.
+
+OK, who is that? "I don't know." Don't know as in…? You should speak to one of our PR people. Yes, we respond, but we want to speak to one of your engineers or someone involved in the partnership. He pulls out his phone, finds the Unity/Magic Leap press release, and starts to read it. Yes, we've read it – but who can we talk to about it? You should speak to someone at the front desk, he tells us.
+
+OK, let's try a different tack: has he seen the product that his company has just announced it will partner with? No, not yet, but he expects to soon. When? He has no idea.
+
+Partner-swapping
+It may be worth pointing out at this stage that Magic Leap's two new partners – Unity and the Unreal peeps – have a philosophy of working with just about any and every games platform.
+
+Unity's entire business model and marketing message is "Build once, deploy anywhere" – indicating that developers can use its software to build a game and then port it to just about any games machine. We count 28 supported platforms on its website, from the well-known (iOS, PlayStation, Xbox) to the more obscure (Vuforia). Likewise, Unreal works on just about every console.
+
+And so the widely touted "partnership" between Magic Leap and these industry giants is, in reality, them simply agreeing to add Magic Leap to the long list of other platforms they already support.
+
+It wouldn’t be news at all if there wasn't a big question mark over whether Magic Leap's hardware even exists as described or hyped.
+
+But there is still hope. Mike tells us one of the Magic Leap engineers is planning to give a talk at 2pm tomorrow by their coffee table. And the company is scheduled to give a presentation at 4pm tomorrow titled "The World is Your Playground."
+
+So maybe we will see something real tomorrow. In the meantime, it's hard not to look at the small glass coffee table strewn with stickers and compare it with the 30-foot screen behind showing real games being played with real hardware in real time.
+
+As Mike hands us a red-bird Magic Leap logo sticker, behind him a presenter is walking the audience through a new game where he builds a wooden tower, while climbing it, in order to get a higher vantage point to shoot at a rival gamer who is about 200 feet away in the game, but just a few feet to his left in the real world.
+
+It's pretty compelling. And, you know, it exists. ®

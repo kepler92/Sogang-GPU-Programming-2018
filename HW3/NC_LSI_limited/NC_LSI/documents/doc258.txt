@@ -1,0 +1,101 @@
+HTC Sense is a user interface, based on the TouchFLO 3D user interface,[1] developed by HTC for mobile devices running Android, Brew and Windows Mobile. HTC Sense is a “design experience, an architecture that is all about how people use the device, making their content personal to how they use the device.”[2] However, HTC has confused the issue by calling HTC Sense a user interface in press releases about the launch of the HTC Hero in India.[3] Announced June 24, 2009, the first phone running Android to feature HTC Sense was the HTC Hero,[4][5] and the first Windows Phone to feature HTC Sense (an updated TouchFLO) was the HTC HD2, announced October 6, 2009.[6]
+
+At the Mobile World Congress 2010, HTC showed their new updated HTC Sense UI to debut on the HTC Desire and HTC Legend, with an upgrade available for the Hero and Magic. The new version is based upon Android 2.1 and has new interface features such as the Friend Stream widget (which aggregates all Twitter, Facebook and Flickr information) and Leap, which allows access to all the home screens at once.[7]
+
+While the Windows Mobile version of Sense is the successor to TouchFLO 3D, with information featured on separate tabs, the Android version presents information through Android desktop widgets and applications, and includes launcher, app drawer, and lock screen replacements.
+
+Applications for Android
+Friend Stream
+Camera
+Gallery (Pictures)
+Calculator
+Calendar
+Desk Clock
+Contacts
+Music (player and library)
+Weather
+Modified home screen
+Modified browser
+Twitter application 'peep'
+Footprints
+Stocks
+Album
+Mail[8]
+[edit] Widgets for Android
+Bookmarks
+Calculator
+Calendar
+Clocks
+FM Radio
+Footprints
+Friend stream
+HTC Likes
+Mail
+Messages
+Music
+My Shelf
+Navigate
+News
+People
+Photo Album
+Photo Frame
+Pictures
+Search Anywhere
+Settings (for turning on/off GPS, data connection, 3G, Wi-Fi, Bluetooth)
+Sync All
+Stocks
+Twitter widget 'peep'
+Weather [9]
+[edit] Today Screen Plugin for Windows Mobile
+The Today screen plugin is the main aspect of Sense, and consists of several tabs, which can be viewed by sliding a finger along the bottom bar or touching one of the visible icons. The Messages, Email and Calendar icons update to show the number of unread SMS/MMS messages, the number of unread emails and the current date respectively. Several applications, such as HTC Messages, are closely linked to the Today screen plugin to provide a seamless experience. The tabs to the immediate right and left of the current tab can be accessed by swiping in the relevant direction. The tabs in Sense 2.5 are:
+
+Home - Displays the date and time, weather, the time the next alarm is set for, missed calls, and the next appointment. It also shows three quick links to programs, contacts or bookmarks. Flicking the quick links upwards reveals all nine quick links.
+People - Shows pictures of contacts in a 3x5 grid, of which the first 9 are visible. The photo can be clicked for performing the default action, like calling or sending an SMS or e-mail. The name can be clicked to open the contact, which shows the name and picture. Below is a slider for five screens: 
+Details - Further contact options like other phone numbers to call or send an sms to, e-mail addresses to mail to, and addresses to look up on Google Maps.
+Messages - All SMS/MMS messages sent between you and the contact
+Email - All e-mail received from the contact
+Updates and Events - Facebook updates and new events related to the contact
+Call History - All calls between you and the contact
+Messages - Displays received text messages that fly on and off screen.
+Mail - Displays received email messages, from up to 4 different email accounts as prints stacked on a pile. Individual emails may be flipped through, flying off the screen.
+Internet - Displays a link to open the Opera web browser, bookmarks to favorite websites, and a built-in YouTube application.
+Calendar - Displays a calendar in agenda, day, week, month or year view. Tapping any box will open the relevant day, displaying a list of appointments for that day.
+Stock - Displays graphs and quotes for user-selected companies. If a stock is touched, a screen with additional info and graphs opens with a link to the relevant Yahoo finance page.
+Photos and Videos - Shows photos and videos that can be flipped through, and buttons to launch the camera to take pictures and to record video. Placing the phone in a landscape orientation causes photos and videos to be slown in a Cover Flow-like view.
+Music - Displays cover art of music that flips through in a linear format. Music can be played directly from the tab, and can be forwarded/rewound by touching the progress slider. Cover art can be automatically downloaded, and rotating the phone to a landscape orientation will cause the albums to be shown in a Cover Flow-like view. The library, which can be accessed pressing the Left Softkey, also uses the scrollbar interface to allow users to sort music by: 
+Now Playing
+Artists
+Albums
+Playlists
+All Songs
+Genres
+Composers
+Purchased
+Footprints lets you geotag and add text and sound recordings to photos to create a scrapbook of places visited.
+Recent Documents shows previews of, and provides fast access to, recent documents saved on the device and received as email attachments. Like the Music tab, placing the phone in a landscape orientation provides a Cover Flow-like view of the documents, and pressing the left softkey allows users to sort documents by: 
+Title
+Recent
+Type
+Received
+Sender
+Twitter shows a stream of the latest Twitter tweets. Like the Music tab, by pressing the left softkey users can view: 
+All Tweets
+Mentions
+Direct Messages
+Favorites
+Weather - Displays weather for up to 10 cities selected from a predefined list, including a 5-day forecast. Additional cities can be added by disabling TouchFLO and editing the weather database.
+Settings - Provides access to the following system settings: 
+Personalize - Home tab wallpaper, lock screen wallpaper, home screen tabs, font and vibration.
+Wireless controls - to turn Airplane Mode, Phone, Bluetooth, Wi-Fi, Direct Push e-mail, Data connection, Wi-Fi Router and 3G on/off and to configure them.
+Sound & Display - to change the ringtone and profile settings, backlight and to calibrate the G-sensor.
+Data services - to configure ActiveSync, Stockes, Weather, Internet time sync, Social networks (Facebook, Twitter, YouTube) and E-mail.
+Location - to configure Assisted GPS.
+Security - to configure encryption, certificates, and the way the phone locks and to initiate a factory reset.
+Application - to remove applications and configure managed applications.
+SD card & phone storage - To display the amount of storage used and free
+Date & time - To set date, local time and time format.
+Locale & text - To set language, region and text input options.
+Error reporting - To enable or disable error reporting to microsoft.
+Other - Uploader, Car Kit Mode, USB to PC settings.
+About phone - Phone identity and IMEI number, hardware and software information, battery status and copyright information.
+Each tab has two soft keys which provide access to functions associated with a tab or tab customisation

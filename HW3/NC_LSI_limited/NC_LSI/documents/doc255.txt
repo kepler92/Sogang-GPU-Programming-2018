@@ -1,0 +1,25 @@
+Smartphone Security Vulnerable to Touch-Screen Smudges, Researchers Report
+
+
+In a paper, researchers from the University of Pennsylvania revealed how the smudge marks left on your smartphone’s touch screen can be used to guess your password.
+Rate This Article: 
+
+
+ 
+ 
+Security researchers from the University of Pennsylvania have highlighted a potential attack vector for accessing your mobile devices–the smudges from your fingertips. 
+
+In a paper (PDF) presented this week at the USENIX Security Symposium in Washington, D.C., the researchers revealed that oily residues on the surface of touch screens used on devices such as smartphones can be used to infer passwords.  
+
+“We believe smudge attacks are a threat for three reasons,” the researchers wrote. “First, smudges are surprisingly persistent in time. Second, it is surprisingly difficult to incidentally obscure or delete smudges through wiping or pocketing the device. Third and finally, collecting and analyzing oily residue smudges can be done with readily available equipment such as a camera and a computer.”
+
+According to a study by comScore released last November, touch-screen mobile phone adoption in the United States grew by 159 percent between August 2008 and 2009, from 9.2 million to 23.8 million subscribers. This outpaced overall smartphone adoption, which grew at an otherwise respectable rate of 63 percent, from 20.7 million to 33.8 million subscribers.
+
+The researchers experimented with two types of Google Android-based smartphones, the HTC G1 and the HTC Nexus1, under various lighting and camera conditions. 
+
+In one experiment, the researchers found they were able to recover the entire password pattern 68 percent of the time after the phone had been in contact with a person’s face, as would happen during a normal phone call. When the experiment was conducted with the pattern entered with only “light touches,” partial information was discernible 30 percent of the time. 
+
+Though the researchers said the techniques could be applied to other smartphones and devices such as ATMs, they focused on Android phones with 389,112 possible password patterns. While the team called this a reasonably large space of patterns, in the event of smudge attacks the attackers can select a “highly likely set of patterns, increasing her chances of guessing the correct one before the phone locks-out.”
+
+“We believe smudge attacks based on reflective properties of oily residues are but one possible attack vector on touch screens,” the researchers wrote, adding “the practice of entering sensitive information via touch screens needs careful analysis in light of our results.”
+

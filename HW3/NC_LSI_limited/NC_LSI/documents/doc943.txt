@@ -1,0 +1,20 @@
+OLEDs Could Control Light to Boost Li-Fi Bandwidth
+ Photo: Plessey
+Coming Soon to a Wrist Near You: MicroLED Displays
+ 
+Firefly Structures Can Boost OLED Efficiency
+Organic LEDs (OLEDs), the light-emitting devices that make up displays such as smartphone and television screens, could be made hardier and more energy-efficient with just a simple tweak to the manufacturing process, according to German and Spanish scientists.
+
+“You’ll use less of the battery and your display will just last longer,” says Sebastian Reineke, a professor of organic semiconductors at Technical University of Dresden in Germany. Reineke and his colleagues at Dresden and the Autonomous University of Barcelona, in Spain, describe their work in the latest issue of Science Advances.
+
+OLEDs are popular for displays. Some smartphone makers have been using them for years, and Apple introduced them in its iPhone X. They’re thinner, lighter, and brighter than the alternative, liquid crystal displays. But OLEDs also have shorter lifetimes. Researchers have been trying to improve OLEDs by either finding new organic polymers to build them with, or by redesigning their structures. Reineke’s team took a different approach, looking at the way existing OLEDs are manufactured.
+
+It turns out simply raising the temperature at which the materials are deposited on a substrate has beneficial effects. By heating the polymers to within 80 to 90 percent of their glass transition temperature—the temperature at which a material switches from a glassy to a rubbery state, which is roughly 100 degrees C for many organics—they were able to create “ultrastable glasses.”
+
+Normally the polymers used in OLEDs fit together loosely, and are not perfectly aligned, so they may move in relation to each other, Reineke explains. But in these ultrastable glasses, the molecules are arranged in the best possible configuration, which is their lowest energy state, so they’re more stable.
+
+That stability makes the material less prone to defects that can shorten its lifetime. It also means there’s less vibration, so the OLED doesn’t generate as many phonons that can couple to charge carriers and carry away energy as heat rather than light.
+
+The team tested the process with four commonly used phosphorescent emitters, all of which showed an increase of approximately 15 percent in both lifetime and efficiency. How much extra battery life or longer use that would provide in an actual cell phone would depend on a lot of factors, including how the phone is used. “Lifetime is a major concern for every application, like displays and solid-state lighting, so everything you can get for lifetime, the marketplace will take,” Reineke says.
+
+He plans to test the process on a wider array of OLED materials, including those that use fluorescent emitters. The next step will be to see if the heating step can be added to manufacturing processes without too much additional expense. Reineke is working with Cynora, a company in Bruchsal, Germany that makes OLEDs, to test the idea.

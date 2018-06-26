@@ -1,0 +1,49 @@
+Intel, Nokia, Qualcomm Bet on MulteFire to Blend LTE and Wi‑Fi
+Proponents say the new LTE-based technology will be deployed like Wi-Fi in factories, hotels, and airports
+By Amy Nordrum
+A digital seen of a plaza with with bubbles representing data shooting out from several black lamp posts toward people holding smartphones.
+Image: Qualcomm
+Advertisement
+
+Editor’s Picks
+Illustration graph with 5G at the top
+Verizon and AT&T Prepare to Bring 5G to Market
+ abstract art depicting wifi signals
+Why Wi-Fi Stinks—and How to Fix It
+A wireless industry consotium is developing a new technology called MulteFire that it says delivers the high performance of 4G LTE cellular networks while being as easy to deploy as Wi-Fi routers.
+
+Rather than relying on the licensed spectrum purchased for today’s LTE service, MulteFire operates entirely in the unlicensed 5 gigahertz band. And to set it up, users would simply need to install MulteFire access points, similar to Wi-Fi access points, at any facility served by optical fiber or wireless backhaul.
+
+Once installed, MulteFire would provide greater capacity, range, and coverage than Wi-Fi, because it’s based on advanced LTE standards. But by operating in unlicensed spectrum, MulteFire could conserve resources for companies struggling to meet customers’ data demands.
+
+Depending on how MulteFire is used, it could let cellular companies offload traffic to unlicensed spectrum, or allow factory owners to set up private MulteFire networks to serve equipment, robots, and Internet-0f-Things devices. The technology is being developed by the MulteFire Alliance founded by Nokia, Qualcomm, Ericsson, and Intel.
+
+Marcus Weldon, president of Nokia Bell Labs and chief technology officer of Nokia, laid out his vision for MulteFire during a meeting at Nokia Bell Labs in New Jersey last week. As Weldon sees it, managers of industrial facilities will be the primary customers for MulteFire and will want to use it to connect millions of devices for oil and gas drilling, power transmission, and manufacturing.
+
+“No consumers are saying, ‘Damnit, give me MulteFire!’” he says. “Or at least, I haven’t found one yet. But some industries are.”
+
+Already, carriers can combine unlicensed spectrum with their own licensed spectrum to create larger bandwidths for users. Advanced LTE technology known as LAA (Licensed Assisted Access) allows carriers to do this for the downlink (transmissions from base stations to devices), and the more recent eLAA (Enhanced Licensed Assisted Access) allows them to also do it for the uplink (transmissions from devices to base stations).
+
+A third technology, called Multi-Path Transmission Control Protocol, is similar to both LAA and eLAA in that it also combines licensed and unlicensed spectrum to deliver higher data rates on cell networks.
+
+But all of these modes still rely on licensed spectrum as the “anchor” to which carriers then add capacity from unlicensed spectrum. In effect, MulteFire extends these advanced LTE capabilities to operate independently in unlicensed spectrum. In fact, the first MulteFire specification, released earlier this year, builds directly on 3GPP Releases 13 and 14, which describe LAA and eLAA.  
+
+With MulteFire, a device could operate at 5 GHz without anchoring to any licensed spectrum, thereby freeing up licensed resources for other mobile customers. The technology dodges other Wi-Fi users (who may also broadcast at 5 GHz) by employing the same “listen-before-talk” protocol used in Wi-Fi today.
+
+
+
+To set up MulteFire at a facility, the owner would simply install MulteFire access points, similar to Wi-Fi access points, around the premises. Just like for Wi-Fi, these access points would require some type of backhaul—either fiber or millimeter wave fixed wireless.
+
+On the network side, carriers could choose to set up their own MulteFire access points at specific loations (just as they operate their own base station equipment today) or agree to share many access points installed by an independent third party (this model has become an increasingly popular way to deploy expensive infrastructure).
+
+If MulteFire catches on, cellular carriers could automaticaly offload consumers to it once they are within range an access point, just as carriers offload traffic today to Wi-Fi.
+
+That’s certainly a compelling pitch to carriers struggling to meet customer’s data demands on their LTE networks. But Weldon and others ultimately believe the technology’s higher purpose will be for industrial uses. They think managers at facilities and companies will want to set up their own MulteFire networks (similar to Wi-Fi networks) to connect robots and Internet-of-Things devices.
+
+Nanda Menon of Athonet, in Bolzano-Vicentino, Italy, said his company hears many requests from enterprise clients who want a private LTE networks to serve the increasing numbers of devices they’re bringing online worldwide. But creating such a network requires the clients to negotiate contracts for licensed spectrum at many different frequencies with carriers around the world.
+
+Deploying these private networks on a common 5 GHz band, which remains unlicensed everywhere in the world, would be much easier.
+
+Last year, Qualcomm demonstrated the first MulteFire transmission, and showed that the technology could peacefully co-exist with Wi-Fi on the same band, while increasing network throughput beyond what Wi-Fi alone could deliver. Another test by Nokia and the Saudi Telecom Company showed that MulteFire delivered 50 percent better range and up to two times better coverage than Wi-Fi.
+
+Next, the MulteFire Alliance plans to develop a certification program that will eventually indicate which devices incorporate MulteFire. First, though, the group will have to persuade smartphone makers and other device manufacturers to add support for MulteFire into the chipsets of their products.

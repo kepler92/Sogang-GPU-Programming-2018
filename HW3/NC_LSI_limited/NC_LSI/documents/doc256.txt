@@ -1,0 +1,8 @@
+Technology Breakthrough Extends Smartphones’ Battery Life Using Audio Communication
+
+Can you imagine how nice could it be if you can extend your smartphone battery life by simply using it for voice communication? Just recently, a group of researchers in Korea has managed to figure out a way on regenerating juice to continuously power up mobile phone by simply talking more.
+
+The mechanism behind relies on a newly created nanomaterial that can transform sound waves into electricity that will eventually be used to power up the mobile phone itself. By embedding a field of nanowires between two electrodes, the technology is claimed to be able to generate 50mV from a soundwave of 100db level. Even though it seems to be higher than normal voice conversation that peaks at 70db, but bear in mind that audio conversation can be part of the power generation source besides other noise level that makes it feasible for actual implementation. Just imagine, now without the need to always keep your travel charger along, you will able to prolong your talk time anytime anywhere as long as there are sources of noise generation. That is not all, the technology will able to benefit other industries as well such as supplying electrical grids during peak hours and so on.
+
+No actual timeline on when will this get implemented in real final products, but this is no doubt a great milestone in mobile portable applications where battery life is still a major concern.
+

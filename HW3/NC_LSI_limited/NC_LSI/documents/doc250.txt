@@ -1,0 +1,141 @@
+Architecture
+There has long been an "ARM Architecture Reference Manual", distinguishing interfaces that all ARM processors are required to support (such as instruction semantics) from implementation details that may vary. The architecture has evolved over time, and starting with the v7 architecture three "profiles" are defined: the "A" (application), "R" (realtime), and "M" (microcontroller) profiles.
+
+Profiles are allowed to subset the architecture. For example the ARMv7-M profile is notable in that it supports only the Thumb processor mode and so only executes Thumb2 instructions, and the ARMv6-M profile is a subset of the ARMv7-M profile (supporting fewer instructions).
+
+[edit] Instruction set
+To keep the design clean, simple and fast, the original ARM implementation was hardwired without microcode, like the much simpler 8-bit 6502 processor used in prior Acorn microcomputers.
+
+[edit] RISC features
+The ARM architecture includes the following RISC features:
+
+Load/store architecture.
+No support for misaligned memory accesses (now supported in ARMv6 cores, with some exceptions related to load/store multiple word instructions).
+Uniform 16 × 32-bit register file.
+Fixed instruction width of 32 bits to ease decoding and pipelining, at the cost of decreased code density. Later, "the Thumb instruction set" increased code density.
+Mostly single-cycle execution.
+To compensate for the simpler design, compared with contemporary processors like the Intel 80286 and Motorola 68020, some additional design features were used:
+
+Conditional execution of most instructions, reducing branch overhead and compensating for the lack of a branch predictor.
+Arithmetic instructions alter condition codes only when desired.
+32-bit barrel shifter which can be used without performance penalty with most arithmetic instructions and address calculations.
+Powerful indexed addressing modes.
+A link register for fast leaf function calls.
+Simple, but fast, 2-priority-level interrupt subsystem with switched register banks.
+[edit] Conditional execution
+The conditional execution feature (called predication) is implemented with a 4-bit condition code selector (the predicate) on every instruction; one of the four-bit codes is reserved as an "escape code" to specify certain unconditional instructions, but nearly all common instructions are conditional. Most CPU architectures only have condition codes on branch instructions.
+
+This cuts down significantly on the encoding bits available for displacements in memory access instructions, but on the other hand it avoids branch instructions when generating code for small if statements. The standard example of this is the subtraction-based Euclidean algorithm:
+
+In the C programming language, the loop is:
+
+    while(i!=j) {
+       if (i > j)
+           i -= j;
+       else
+           j -= i;
+    }
+In ARM assembly, the loop is:
+
+ loop   CMP    Ri, Rj       ; set condition "NE" if (i != j),
+                            ;               "GT" if (i > j),
+                            ;            or "LT" if (i < j)
+        SUBGT  Ri, Ri, Rj   ; if "GT" (greater than), i = i-j;
+        SUBLT  Rj, Rj, Ri   ; if "LT" (less than), j = j-i;
+        BNE    loop         ; if "NE" (not equal), then loop
+which avoids the branches around the then and else clauses. Note that if Ri and Rj are equal then neither of the SUB instructions will be executed, optimising out the need for a conditional branch to implement the while check at the top of the loop, for example had SUBLE (less than or equal) been used.
+
+One of the ways that Thumb code provides a more dense encoding is to remove that four bit selector from non-branch instructions.
+
+[edit] Other features
+Another feature of the instruction set is the ability to fold shifts and rotates into the "data processing" (arithmetic, logical, and register-register move) instructions, so that, for example, the C statement
+
+a += (j << 2);
+could be rendered as a single-word, single-cycle instruction on the ARM.
+
+ADD Ra, Ra, Rj, LSL #2
+This results in the typical ARM program being denser than expected with fewer memory accesses; thus the pipeline is used more efficiently. Even though the ARM runs at what many would consider to be low speeds, it nevertheless competes quite well with much more complex CPU designs.[citation needed]
+
+The ARM processor also has some features rarely seen in other RISC architectures, such as PC-relative addressing (indeed, on the ARM the PC is one of its 16 registers) and pre- and post-increment addressing modes.
+
+Another item of note is that the ARM has been around for a while, with the instruction set increasing somewhat over time. Some early ARM processors (prior to ARM7TDMI), for example, have no instruction to store a two-byte quantity, thus, strictly speaking, for them it's not possible to generate efficient code that would behave the way one would expect for C objects of type "int16_t".
+
+[edit] Pipelines and other implementation issues
+The ARM7 and earlier implementations have a three stage pipeline; the stages being fetch, decode, and execute. Higher performance designs, such as the ARM9, have deeper pipelines: Cortex-A8 has thirteen stages. Additional implementation changes for higher performance include a faster adder, and more extensive branch prediction logic. The difference between the ARM7DI and ARM7DMI cores, for example, was an improved multiplier (hence the added "M").
+
+[edit] Coprocessors
+The architecture provides a non-intrusive way of extending the instruction set using "coprocessors" which can be addressed using MCR, MRC, MRRC, MCRR, and similar instructions. The coprocessor space is divided logically into 16 coprocessors with numbers from 0 to 15, coprocessor 15 (cp15) being reserved for some typical control functions like managing the caches and MMU operation (on processors that have one).
+
+In ARM-based machines, peripheral devices are usually attached to the processor by mapping their physical registers into ARM memory space or into the coprocessor space or connecting to another device (a bus) which in turn attaches to the processor. Coprocessor accesses have lower latency so some peripherals (for example XScale interrupt controller) are designed to be accessible in both ways (through memory and through coprocessors). In other cases, chip designers only integrate hardware using the coprocessor mechanism. For example, an image processing engine might be a small ARM7TDMI core combined with a coprocessor that has specialized operations to support a specific set of HDTV transcoding primitives.
+
+[edit] Debugging
+All modern ARM processors include hardware debugging facilities; without them, software debuggers could not perform basic operations like halting, stepping, and breakpointing of code starting from reset. These facilities are built using JTAG support, though some newer cores optionally support ARM's own two-wire "SWD" protocol. In ARM7TDMI cores, the "D" represented JTAG debug support, and the "I" represented presence of an "EmbeddedICE" debug module. For ARM7 and ARM9 core generations, EmbeddedICE over JTAG was a de-facto debug standard, although it was not architecturally guaranteed.
+
+The ARMv7 architecture defines basic debug facilities at an architectural level. These include breakpoints, watchpoints, and instruction execution in a "Debug Mode"; similar facilities were also available with EmbeddedICE. Both "halt mode" and "monitor" mode debugging are supported. The actual transport mechanism used to access the debug facilities is not architecturally specified, but implementations generally include JTAG support.
+
+There is a separate ARM "CoreSight" debug architecture, which is not architecturally required by ARMv7 processors.
+
+[edit] DSP enhancement instructions
+To improve the ARM architecture for digital signal processing and multimedia applications, a few new instructions were added to the set.[37] These are signified by an "E" in the name of the ARMv5TE and ARMv5TEJ architectures. E-variants also imply T,D,M and I.
+
+The new instructions are common in digital signal processor architectures. They are variations on signed multiply-accumulate, saturated add and subtract, and count leading zeros.
+
+[edit] Jazelle
+Main article: Jazelle
+Jazelle is a technique that allows Java Bytecode to be executed directly in the ARM architecture as a third execution state (and instruction set) alongside the existing ARM and Thumb-mode. Support for this state is signified by the "J" in the ARMv5TEJ architecture, and in ARM9EJ-S and ARM7EJ-S core names. Support for this state is required starting in ARMv6 (except for the ARMv7-M profile), although newer cores only include a trivial implementation that provides no hardware acceleration.
+
+[edit] Thumb
+To improve compiled code-density, processors since the ARM7TDMI have featured the Thumb instruction set state. (The "T" in "TDMI" indicates the Thumb feature.) When in this state, the processor executes the Thumb instruction set, a variable-length instruction set providing 32-bit and 16-bit instructions. Most of the Thumb instructions are directly mapped to normal ARM instructions. The space-saving comes from making some of the instruction operands implicit and limiting the number of possibilities compared to the ARM instructions executed in the ARM instruction set state.
+
+In Thumb, the 16-bit opcodes have less functionality. For example, only branches can be conditional, and many opcodes are restricted to accessing only half of all of the CPU's general purpose registers. The shorter opcodes give improved code density overall, even though some operations require extra instructions. In situations where the memory port or bus width is constrained to less than 32 bits, the shorter Thumb opcodes allow increased performance compared with 32-bit ARM code, as less program code may need to be loaded into the processor over the constrained memory bandwidth.
+
+Embedded hardware, such as the Game Boy Advance, typically have a small amount of RAM accessible with a full 32-bit datapath; the majority is accessed via a 16 bit or narrower secondary datapath. In this situation, it usually makes sense to compile Thumb code and hand-optimise a few of the most CPU-intensive sections using full 32-bit ARM instructions, placing these wider instructions into the 32-bit bus accessible memory.
+
+The first processor with a Thumb instruction decoder was the ARM7TDMI. All ARM9 and later families, including XScale, have included a Thumb instruction decoder.
+
+[edit] Thumb-2
+Thumb-2 technology made its debut in the ARM1156 core, announced in 2003. Thumb-2 extends the limited 16-bit instruction set of Thumb with additional 32-bit instructions to give the instruction set more breadth. A stated aim for Thumb-2 is to achieve code density similar to Thumb with performance similar to the ARM instruction set on 32-bit memory. In ARMv7 this goal can be said to have been met.
+
+Thumb-2 extends both the ARM and Thumb instruction set with yet more instructions, including bit-field manipulation, table branches, and conditional execution. A new "Unified Assembly Language" (UAL) supports generation of either Thumb-2 or ARM instructions from the same source code; versions of Thumb seen on ARMv7 processors are essentially as capable as ARM code (including the ability to write interrupt handlers). This requires a bit of care, and use of a new "IT" (if-then) instruction, which permits up to four successive instructions to execute based on a tested condition. When compiling into ARM code this is ignored, but when compiling into Thumb-2 it generates an actual instruction. For example
+
+; if (r0 == r1)
+CMP r0, r1
+ITE EQ        ; ARM: no code ... Thumb: IT instruction
+; then r0 = r2;
+MOVEQ r0, r2  ; ARM: conditional; Thumb: condition via ITE 'T' (then)
+; else r0 = r3;
+MOVNE r0, r3  ; ARM: conditional; Thumb: condition via ITE 'E' (else)
+; recall that the Thumb MOV instruction has no bits to encode "EQ" or "NE"
+All ARMv7 chips support the Thumb-2 instruction set. Some chips, such as the Cortex-M3, support only the Thumb-2 instruction set. Other chips in the Cortex and ARM11 series support both "ARM instruction set mode" and "Thumb-2 instruction set mode".[38][39][40]
+
+[edit] Thumb Execution Environment (ThumbEE)
+ThumbEE, also known as Thumb-2EE, and marketed as Jazelle RCT (Runtime Compilation Target), was announced in 2005, first appearing in the Cortex-A8 processor. ThumbEE is a fourth processor mode, making small changes to the Thumb-2 extended Thumb instruction set. These changes make the instruction set particularly suited to code generated at runtime (e.g. by JIT compilation) in managed Execution Environments. ThumbEE is a target for languages such as Limbo, Java, C#, Perl and Python, and allows JIT compilers to output smaller compiled code without impacting performance.
+
+New features provided by ThumbEE include automatic null pointer checks on every load and store instruction, an instruction to perform an array bounds check, access to registers r8-r15 (where the Jazelle/DBX Java VM state is held), and special instructions that call a handler.[41] Handlers are small sections of frequently called code, commonly used to implement a feature of a high level language, such as allocating memory for a new object. These changes come from repurposing a handful of opcodes, and knowing the core is in the new ThumbEE mode.
+
+[show]v • d • eMultimedia extensions 
+ 
+RISC Multimedia Acceleration eXtensions (MAX) · Visual Instruction Set (VIS) · MIPS Digital Media eXtension (MDMX) · Motion Video Instructions (MVI) · AltiVec · MIPS-3D · NEON 
+ 
+x86 MMX · 3DNow! · Streaming SIMD Extensions (SSE) · SSE2 · SSE3 · Supplemental Streaming SIMD Extension 3 (SSSE3) · SSE4 · SSE5 · Advanced Vector Extensions (AVX) · CVT16 · FMA3 / FMA4 · XOP 
+ 
+
+
+
+
+[edit] VFP
+VFP (Vector Floating Point) technology is a coprocessor extension to the ARM architecture. It provides low-cost single-precision and double-precision floating-point computation fully compliant with the ANSI/IEEE Std 754-1985 Standard for Binary Floating-Point Arithmetic. VFP provides floating-point computation suitable for a wide spectrum of applications such as PDAs, smartphones, voice compression and decompression, three-dimensional graphics and digital audio, printers, set-top boxes, and automotive applications. The VFP architecture also supports execution of short vector instructions but these operate on each vector element sequentially and thus do not offer the performance of true SIMD (Single Instruction Multiple Data) parallelism. This mode can still be useful in graphics and signal-processing applications, however, as it allows a reduction in code size and instruction fetch and decode overhead.
+
+Other floating-point and/or SIMD coprocessors found in ARM-based processors include FPA, FPE, iwMMXt. They provide some of the same functionality as VFP but are not opcode-compatible with it.
+
+[edit] Advanced SIMD (NEON)
+The Advanced SIMD extension, marketed as NEON technology, is a combined 64- and 128-bit single instruction multiple data (SIMD) instruction set that provides standardized acceleration for media and signal processing applications. NEON can execute MP3 audio decoding on CPUs running at 10 MHz and can run the GSM AMR (Adaptive Multi-Rate) speech codec at no more than 13 MHz. It features a comprehensive instruction set, separate register files and independent execution hardware. NEON supports 8-, 16-, 32- and 64-bit integer and single-precision (32-bit) floating-point data and operates in SIMD operations for handling audio and video processing as well as graphics and gaming processing. In NEON, the SIMD supports up to 16 operations at the same time. The NEON hardware shares the same floating-point registers as used in VFP.
+
+[edit] Security Extensions (TrustZone)
+The Security Extensions, marketed as TrustZone Technology, is found in ARMv6KZ and later application profile architectures. It provides a low cost alternative to adding an additional dedicated security core to a SoC, by providing two virtual processors backed by hardware based access control. This enables the application core to switch between two states, referred to as worlds (to reduce confusion with other names for capability domains), in order to prevent information from leaking from the more trusted world to the less trusted world. This world switch is generally orthogonal to all other capabilities of the processor, thus each world can operate independently of the other while using the same core. Memory and peripherals are then made aware of the operating world of the core and may use this to provide access control to secrets and code on the device. Typical applications of TrustZone Technology are to run a rich operating system in the less trusted world, and smaller security-specialized code in the more trusted world (known as TrustZone Software, a TrustZone optimized version of the Trusted Foundations(TM) Software developed by Trusted Logic), allowing much tighter Digital Rights Management for controlling the use of media on ARM-based devices,[42] and preventing any unapproved use of the device.
+
+In practice, since the specific implementation details of TrustZone are proprietary and have not been publicly disclosed for review, it is unclear what level of assurance is provided for a given threat model.
+
+[edit] No-execute page protection
+As of ARMv6, the ARM architecture supports no-execute page protection, which is referred to as XN, for eXecute Never.[43]
+

@@ -1,0 +1,47 @@
+Audio Special: The 3D future of game sound
+GenAudio's Michel Henein explains the distinction 3D audio and 'real' 3D audio
+GUEST CONTRIBUTORMAY 15, 2013
+
+[This feature was published in the May 2013 edition of Develop magazine, which is available through your browser and on iPad.]
+
+Like many of my colleagues – both audio and non-audio professionals alike – I am thrilled about what’s yet to come in the gaming technology space.
+
+With increasingly powerful next-gen consoles anticipated by the year’s end, we’ll have the ability to ‘expand’ soundscapes to accompany the expected jump in graphics. These new console systems will usher in exciting capabilities and game developers will, without a doubt, exploit them for gamers to enjoy.
+
+Over the past several years, we’ve seen tremendous improvements in interactive audio, thanks to the sophisticated capabilities provided by middleware audio engines like Audiokinetic’s Wwise and FMOD, as well as various proprietary audio engines.
+
+We now have fluid interactive music, better implementations of realtime and dynamic sound mixing, and higher fidelity audio overall – all in surround sound. So, where do we go from here?
+
+Advertisement
+My answer: developers should make it their mission to abandon traditional stereo and 2D surround presentation formats, wherever possible, in favour of 3D audio.
+
+REAL 3D?
+But we already have 3D audio, don’t we? Not quite. Within the context of gaming, 3D audio typically refers to sound sources being moved around within a game’s 3D space.
+
+Thinking about how players perceive sound presented by the vast majority of games, the sound field is typically along the Y-axis in the case of stereo, or along the XY plane for surround sound, regardless if physical speakers or virtual ones are utilised.
+
+The problem is that nearly all games in the marketplace output sound, physically, as 2D, regardless if they are listening in stereo, using discrete 5.1/7.1 surround-sound systems, or using traditional head-related transfer functions (HRTF) through headphones.
+
+Clearly, what’s missing in modern video games audio presentation is the ability to use the Z-axis to spatialise sound above the player’s head.
+
+In the theatrical market, we now have systems from Dolby, DTS, Auro 3D, Iosono, and GenAudio which allow theater goers to hear sounds in all 3D dimensions (with 11.1, 13.1, and beyond).
+
+Most of these systems require physical speakers placed in all three axes around the theater to deliver 3D audio, or in the case of GenAudio, digital signal processing (DSP) provides Z-axis elevation with as few as two speakers.
+
+For gamers, physical speakers beyond 5.1 (for example, with speakers mounted on the ceiling for height) is a stretch, to say the least, which is why, I believe, technologies that will provide the ability to perceive accurate 3D sound using only two speakers, headphones, or existing 5.1 systems will be received well by the marketplace.
+
+Exploiting the Z-axis (elevation) and providing an immersive ‘true to life’ audio experience will require improved methodologies that incorporate specialised neuro-auditory research and advanced DSP algorithms that can be integrated directly into a game’s sound engine. Imagine a game with a dynamic, true 3D audio sound-field adapting in realtime with head tracking on the Oculus Rift, for example.
+
+With next-gen gaming consoles, the ability to spatialise sound for players using all three physical dimensions will be possible as new technologies will emerge that will leverage increased processing power to deliver true 3D audio – such as GenAudio’s technology based on brain-related transfer functions (BRTFs) which extends traditional HRTF methods by including brain response data measured using MRI.
+
+MAKING IT CLEAR
+The concern I have is the potential confusion for both game developers and consumers when audio technology companies begin to push actual 3D audio technology to the game industry. A proper classification system is in order to distinguish solutions that truly produce 3D audio from those that only produce 2D audio (yet are identified as 3D audio).
+
+While audio companies ultimately, must bear the primary burden to reclassify, market, and drive awareness of their 3D audio solutions, I strongly believe that the industry at large – game audio professionals, producers, directors, artists, designers, and other game development professionals – would be best served if they make their voices heard, calling for more better classification of 2D/3D audio technologies through various organisations, special interest groups, panels, and discussions across the entire spectrum of the video games industry.
+
+Advertisement
+The time is right for 3D audio technologies – or whatever the games industry decides to classify them as – with solutions emerging to replace legacy 2D audio technologies by the year’s end. Gamers demand differentiation when new systems emerge and developers need to seek out 3D audio solutions to meet their demand for ‘heightened’ experiences – the horsepower is there, so let’s use it.
+
+www.genaudioinc.com
+
+To see other articles in our Audio Special series, visit our archive

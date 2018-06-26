@@ -1,0 +1,28 @@
+Mobile virus
+From Wikipedia, the free encyclopediaJump to: navigation, search 
+ This article includes a list of references, but its sources remain unclear because it has insufficient inline citations.
+Please help to improve this article by introducing more precise citations where appropriate. (April 2009) 
+
+A mobile virus is an electronic virus that targets mobile phones or wireless-enabled PDAs.
+
+As wireless phone and PDA networks become more numerous and more complex, it has become more difficult to secure them against electronic attacks in the form of viruses or other malicious software (also known as malware).
+
+[edit] History
+The first instance of a mobile virus occurred in June 2004 when it was discovered that a company called Ojam had engineered an anti-piracy Trojan virus in older versions of their mobile phone game Mosquito. This virus sent SMS text messages to the company without the user's knowledge. This virus was removed from more recent versions of the game; however it still exists on older, unlicensed versions. These older versions may still be distributed on file-sharing networks and free software download web sites.
+
+In July 2004, computer hobbyists released a proof-of-concept mobile virus named Cabir. This virus replicates itself on Bluetooth wireless networks.[1]
+
+In March 2005 it was reported that a computer worm called Commwarrior-A has been infecting Symbian series 60 mobile phones. This worm replicates itself through the phone's Multimedia Messaging System (MMS). It sends copies of itself to other phone owners listed in the phone user's address book. Although the worm is not considered harmful, experts agree that it heralds a new age of electronic attacks on mobile phones.
+
+In August 2010, Kaspersky Lab reported the first malicious program named Trojan-SMS.AndroidOS.FakePlayer.a classified as a Trojan-SMS has been detected for smartphones running on Google’s Android operating system. It has already infected a number of mobile devices.[2] It sends SMS messagess to premium rate numbers without the owner’s knowledge or consent which can rake up huge bills. For a security concern, Android users are advised to download from a trusted source.[3]
+
+Notable mobile viruses
+
+Cabir: Infects mobile phones running on Symbian OS. When a phone is infected, the message 'Caribe' is displayed on the phone's display and is displayed every time the phone is turned on. The worm then attempts to spread to other phones in the area using wireless Bluetooth signals.
+
+Duts: A parasitic file infector virus and is the first known virus for the PocketPC platform. It attempts to infect all EXE files in the current directory (infects files that are bigger than 4096 bytes).
+
+Skulls: A trojan horse piece of code. Once downloaded, the virus, called Skulls, replaces all phone desktop icons with images of a skull. It also will render all phone applications, including SMSes and MMSes useless.
+
+Commwarrior: First worm to use MMS messages in order to spread to other devices. Can spread through Bluetooth as well. It infects devices running under OS Symbian Series 60. The executable worm file, once launched, hunts for accessible Bluetooth devices and sends the infected files under a random name to various devices.
+

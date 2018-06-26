@@ -1,0 +1,41 @@
+PC gaming in 3D stereo: 3D Vision 2 vs. HD3D
+We slip on the funny glasses to assess the state of stereoscopic gaming 
+by Cyril Kowaliski — 11:47 AM on January 25, 2012
+
+STEREOSCOPIC 3D HAS MADE ITS WAY into just about every medium of visual entertainment over the past few years. Most blockbuster films are in 3D nowadays, with movie theaters delighted to charge extra for the privilege—and for the disposable polarizing glasses. 3D televisions from the likes of Sony and Samsung are being sold at Best Buy. Even some game consoles, both set-top and handheld, now offer stereoscopic graphics.
+
+The PC, too, has jumped on this bandwagon, thanks in large part to the efforts of Nvidia and AMD. Though these two companies have different philosophies and largely incompatible implementations, they've now been pushing stereo 3D on the PC for years.
+
+Our last in-depth look at stereo 3D gaming was in February 2009, shortly after the debut of Nvidia's 3D Vision technology. Back then, game compatibility left much to be desired, the performance hit was sizable, and the entry price was awfully steep—$199 for the glasses, $349 for a compatible display, and even more for a graphics card fast enough to do them justice. Our verdict was that, while promising, 3D Vision just wasn't ready for prime time.
+
+Much has happened since. Prices for both the glasses and compatible displays have fallen. Updated Nvidia glasses, as well as displays based on a new backlight technology, have hit the market. Some monitor vendors are now bundling the Nvidia glasses with their displays. AMD has entered the field with a looser standard called HD3D, which promises many of the same benefits as 3D Vision. Most importantly, the list of supported games has grown—substantially. Both companies now tout stereo compatibility with hundreds of titles, including recent triple-A releases like Battlefield 3.
+
+Things are looking up.
+
+Over the past few weeks, I've been tinkering with a pair of stereo 3D setups—one based on 3D Vision 2, the other based on HD3D—to get a sense of the current state of affairs. I was curious to get a feel for not just how well the technology works and how the AMD and Nvidia solutions compare, but also whether stereoscopy is a worthwhile addition to the PC gaming experience.
+
+Before we get to the big questions, we should start by explaining what 3D Vision 2 and HD3D entail.
+
+Nvidia's GeForce 3D Vision 2
+With 3D Vision, Nvidia was the first GPU maker to really push stereoscopic 3D gaming on the PC in a big way. The latest version of this technology still involves the same three basic components: glasses, displays, and software.
+
+Nvidia's 3D goggles are bundled with a number of compatible monitors and laptops. They're also available on their own for $149.99 with a wireless receiver in the box, or $99.99 for the glasses only, if your display or laptop already has a receiver built in. That's not cheap, but these are much more sophisticated than the simple polarizing glasses passed out at the movies. In both cases, the idea is to show each eye a different image, tricking the brain into perceiving depth. Nvidia's active-shutter goggles do so by opening and closing their shutters 120 times each second. (I understand the process involves a liquid-crystal layer in each lens, which goes dark when an electric current is applied.) Compatible displays spit out images for the left and right eye in rapid succession, also at 120Hz. All the glasses have to do is shield one eye when the display is rendering an image intended for the other, and vice versa—presto, there's your illusion of depth.
+
+The displays and goggles have to be synchronized, which is where that wireless receiver comes in. It uses infrared signals, just like a TV remote. Also, since the glasses have to sync up and flicker their shutters many times each second, they require power. The Nvidia glasses have a battery built into the frame; you'll just need to charge them via the included micro-USB cable every once in a while.
+
+Nvidia says the 3D Vision ecosystem includes more than 20 compatible displays. There are a number of compatible laptops and projectors, too, but desktop monitors are what concern us today. Companies like Asus, Acer, BenQ, and ViewSonic all sell 3D Vision monitors, which typically have 1080p resolutions, panel sizes in the 23"-27" range, and prices upward of $300. In most cases, dual-link DVI is the input of choice for stereo 3D. Some monitors have HDMI 1.4 support, too, but that interface limits the refresh rate of 1080p 3D images to 30Hz—fine for movies, but not so good for fast-paced action games. A small minority of 3D Vision panels (only a couple of models from BenQ, according to Nvidia) employ DisplayPort for stereo 3D.
+
+Last October, Nvidia announced 3D Vision 2, an update to the hardware side of its stereo 3D implementation. 3D Vision 2 introduced new glasses, which are thinner, more flexible, and have 20% larger lenses than their predecessors. Also, 3D Vision 2 included a display technology called LightBoost, which strives to compensate for the dimming effect of stereo 3D glasses.
+
+Without LightBoost, 3D Vision-compatible panels leave their backlights on constantly. To make sure image persistence, or ghosting, doesn't interfere with the illusion of depth, both shutters in the glasses close while the display changes frames. So, you get a pattern that looks like this: display renders left frame, left shutter opens and then closes again; display renders right frame, right shutter opens and then closes again; rinse, repeat. The default state of the shutters, in other words, is closed.
+
+On a LightBoost display, the shutters are open by default, and the backlight takes over ghosting-prevention duties by switching itself off while the frames change. What's the point of transferring duties in this fashion, you ask? First, it allows the shutters to stay open longer and to close only to make sure each eye sees the right image. That arrangement makes images viewed through the glasses appear brighter. Second, because the backlight doesn't have to be on all the time in stereo 3D mode, the display can get away with running the backlight at a higher intensity when it is on, without going beyond the monitor's power spec. The result: an even brighter picture.
+
+The concept of LightBoost isn't exclusive to 3D Vision 2 monitors (we'll get to that in a minute), but it does nicely address one of the common complaints about active-shutter stereo 3D implementations.
+
+The last piece of the puzzle is software. Stereo 3D support is built into the GeForce drivers, and Nvidia says it can "convert existing games in real time (on the fly) into 3D." On top of that, the company allows developers to "create their own native 3D games that also work with our entire 3D Vision ecosystem of products." The result is a list of 3D Vision-compatible games with over 650 entries. To the user, 3D Vision's software implementation is remarkably seamless and consistent. You'll first want to head to the Nvidia control panel to enable stereo 3D, like so:
+
+
+Once that's done, a text overlay should come up at the bottom right of the screen whenever you launch a compatible 3D game. The overlay will say how well the game is supported and whether you need to tweak any settings to get the best experience. From there, enabling stereoscopy is as simple as hitting Ctrl-T. You can adjust the image depth by hitting Ctrl-F3 and Ctrl-F4, bring up a "laser sight" with another hotkey (in case the game's built-in crosshair doesn't play nice with 3D Vision), and tweak a handful of other settings with other, more esoteric shortcuts. They're all detailed in the control panel.
+
+There's more to 3D Vision, including support for 3D televisions over HDMI 1.4, which requires special software. If you have multiple 1080p monitors, 3D Vision Surround will spread stereo 3D goodness over a trio of displays. Those features lie beyond the scope of this article, though; to make things manageable, we're focusing on single-monitor desktop PC gaming.

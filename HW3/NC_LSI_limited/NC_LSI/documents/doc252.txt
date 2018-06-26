@@ -1,0 +1,36 @@
+touchscreen
+MOTO Development Group created the simple technique so that anyone can evaluate the resolution and accuracy of touchscreen devices before they buy. To conduct the test, consumers open a basic drawing program and draw a few diagonal lines drawn across the screen.
+ 
+Draw Slowly: On a quality touchscreen, people can draw clean straight lines, even while going very slowly. The image that appears on screen accurately represents the slowly drawn lines. However, on inferior touchscreens, it’s basically impossible to draw straight lines. Instead, the lines look jagged, stair-stepped or zig-zag, no matter how slowly you go. The inferior image results from the sensor size is too big, the touch-sampling rate is too low, and/or the algorithms that convert gestures into images are too non-linear to faithfully represent user inputs.
+
+Pressure Matters: A good touchscreen device will produce linear output regardless of whether you're using the full pad of your finger, or just the edge. If you want to test the most extreme performance, draw very lightly with the edge of your finger. The artifacts will increase significantly, showing which device is really the best with a weak signal.
+ 
+Even on a single device, the amount of pressure and the part of the finger you use on the screen has an impact on how well it senses. This is important because quick keyboard use and light flicks on the screen really push the limits of the touch panel's ability to sense.
+ 
+A good touchscreen device will produce linear output regardless of whether you're using the full pad of your finger, or just the dry corner of your cuticle. When comparing devices, make sure to use even pressure across all of them.
+ 
+Millimeters Matter: Small differences in touchscreen sensitivity actually reveal exponential difference in performance. Less sensitive touchscreen systems are infuriating to use for typing.
+ 
+The clear winner was the iPhone’s touch sensor, which showed the most linear tracking with the least amount of stair-stepping. The Droid Eris and Nexus One tied for second with only faint wiggling but actually performed best at the edge of the screen. Last in the line-up was the Motorola Droid, which demonstrated significant wavy artifacts or “stair-stepping.”
+ 
+To create a superior touchscreen experience, the key is to develop a touchscreen sensor that has the highest possible signal-to-noise ratio, or SNR. When a manufacturer gets it right, the device tracks touch inputs almost as if they were connected to physical objects in the real world. Key drivers of SNR include:
+ 
+Conductive sensor material
+Substrate material
+Substrate thickness
+Distance from display (the biggest noise source)
+Sensing waveform
+Sensor pattern
+Sensor pitch
+Analog sensing circuitry
+Sample rate
+ 
+Touchscreens are a catalyst for innovation and a powerful way for device manufacturers to differentiate their products in an intensely competitive marketplace. But as MOTO’s demonstration shows, there’s a right way and a wrong way to deploy the technology. MOTO has worked with capacitive touch interfaces, and offered up these essential dos and don’ts for anyone entering the field:
+ 
+* Don’t skimp on materials. With touchscreen hardware, manufacturers get what they pay for and consumers will notice the difference. 
+ 
+* Allow ample time to develop your algorithms. Don’t treat touchscreen algorithms as an element of component sourcing; create a distinct touch development track in-house to make sure your products are both responsive and accurate.
+ 
+* Closely integrate touchscreen hardware, software, and user interaction development as early as possible in the product development process. Never treat them as separate tasks.
+ 
+The success of the iPhone has triggered the adoption of touchscreen systems in a wide range of mobile devices, and a bevy of new gadgets equipped with capacitive sensing technology have now hit the market. MOTO’s conclusion stated that ‘all touchscreens are not created equal.’

@@ -1,0 +1,60 @@
+Mobile security: In the device or in the network?
+
+The explosion of smart mobile devices brings with it unparalleled enterprise risk. It is hard enough to secure corporate resources when they are in IT’s glass house, or at least on the company grounds. What to do when suddenly the tools, data and applications go wandering? The most fundamental question: Do you secure the device, or put your trust in network defenses?
+
+Threats posed by mobile devices such as smartphones and tablets are best dealt with using both device- and network-level security, but the foundation for any mobile strategy must begin with the network. Here are six reasons why:
+
+ Simply put, the network has always and will always be the final authority on what information goes to and from devices.
+* Historically, the network has proven to be the best place to start. Employees using new technology at work is not a new phenomenon. For more than 20 years, IT has dealt with internal demands for new technology. In the mid 1980s, applications for accounting and desktop publishing first became popular at home and were brought into the office, forcing IT to support them. With the adoption of the Internet, IT had to provide access to the Web and offer secure telecommuting for employees. More recently, Web 2.0 applications became an important component of corporate programs. With corporate information being dynamically posted to the Web, data leak protection and application control became critical. In every example, IT had to adapt to a changing environmentand utilize such network security technologies as VPNs, firewalls and IPS to safely meet user demands for information access. Mobile devices simply continue this trend.
+
+The year in security mischief making that operate on their own and without network components offer limited protection. While antivirus and VPN clients running on desktops, laptops and mobile devices have a place in a security arsenal, they have never been and should never be the foundation for an IT security strategy. Protection should always begin with a network security solution that incorporates variety of technologies necessary for a multi-layered approach, such as firewall, VPN, IPS and application control. Unified Threat Management and Next Generation Firewalls consolidate multiple functions into a single device and enableIT administrators to easily monitor the flow of data and behavior of the device and the user while connected to the corporate network.
+
+TEST: DLP tolls deliver strong end point protection
+
+* Personal devices are becoming more heterogeneous and fragmented: The ‘personal’ nature and rapid evolution of such devices make platform standardization extremely difficult. What’s more, given the rate of change and the level of device and operating system fragmentation that exists in the mobile device industry, it is obvious that solving the mobile security challenge will be difficult by relying solely on agents. There are too many operating systems, devices and hardware platforms to expect agents to exist for every device and for every agent to act the same way on every device. Even today, one can take five smartphones from five different handset manufacturers all running the same release of the Android OS, install the same security suite on them and still have different levels of policies and enforcement available. This is unacceptable from a security standpoint and puts compliance with regulatory requirements and best practices at risk.
+
+* It’s next to impossible to put a client on every device that needs access to information on the network: Most organizations deal with ad-hoc attachments to their networks from both the WAN and the LAN, such as contractors. An organization cannot expect to successfully deploy clients on every device that needs access to necessary information. Network security-based policies are necessary to deal with the large number of guests, contractors and customers that will access the network.
+
+*  Flexibility is critical: From simple VPN connections to virtual desktops to mobile device management (MDM) clients to company-owned devices, it’s important to provide the approach that’s best for the user, the company and the company budget. A network-centric approach gives organizations the ability to easily incorporate mobile users and devices into their existing security architecture.
+
+* Policing corporate mobile policy is next to impossible: A recent survey of 3,500+ Gen-Y workers conducted by Fortinet found that the majority of respondents stated that bringing their own device (BYOD) to their workplace was a right and not a privilege. And nearly a third said they would contravene a company’s security policy that forbids them to use their personal devices at work for work purposes. Surely, a client-centric approach to mobile device security will face difficulties when so many workers will actively seek to work around corporate strictures. The network, under the authority of the IT organization, provides the visibility and control needed to protect corporate assets.
+
+Simply put, the network has always and will always be the final authority on what information goes to and from devices. Ultimately, only network security technologies can answer the three critical questions crucial to safeguarding business data.
+
+Since all traffic has to pass through the network, that’s the best place to secure all the information flowing to and from the devices that are attached to it.
+
+Fortinet is a worldwide provider of network security appliances and the market leader in unified threat management (UTM). Our products and subscription services provide broad, integrated and high-performance protection against dynamic security threats while simplifying the IT security infrastructure. Our customers include enterprises, service providers and government entities worldwide, including the majority of the 2011 Fortune Global 100.
+
+Lawrence Reusing
+Device Security is Key to Securing the Mobile Workforce
+By Lawrence Reusing, General Manager of Imation’s Mobile Security unit
+Whether corporate issued or employee owned, mobile devices have proliferated throughout the enterprise, causing angst for IT. How do you safeguard corporate data – at rest and in motion – used by these devices?
+
+ Strong on-device security is a must.
+In my experience, mobile device security should start with strong authentication backed up by encryption. Let’s agree, however, that network security is also critical to overall security strategy. Layered security is obviously the best practice. But any organization that simply relies on network security to protect their organization’s data is ignoring significant vulnerabilities from the mobile devices and laptops that are the access points to the network.
+
+ANOTHER DEBATE: Layered security defenses: What layer is most critical, endpoint or network?
+
+And as access points go, the numbers are staggering. According to IDC, the number of mobile workers worldwide is expected to rise from 1 billion in 2010 to 1.3 billion by 2015. Today’s mobile workforce – whether contracted workers or employees – typically don’t work on the corporate campus and the flexibility they realize today offers a host of productivity benefits and helps the organization keep and retain talent. 
+
+But despite the best intentions, each mobile worker also presents a threat to their organizations’ sensitive data. Add to that the complication that many of these workers are accessing the corporate network on personal rather than corporate issued devices and move and share reams of data on unsecured flash and hard drives, and there’s a real need for mobile security that addresses end point issues.
+
+This is especially true when you consider that many employees use unsecured wireless networks  (e.g. Starbucks, your hotel, even some home networks) as an on-ramp to corporate networks and resources inside of firewalls.   Without a good plan for device security, identity, password and login credentials can be hijacked by unscrupulous users on these unprotected networks. Strong on-device security is a must.
+
+After all, when mobile workers are outside the corporate network, the only protection they have comes from the device they are using. You must be able to manage all mobile devices and put the necessary security controls in place.
+
+And the need is only getting greater. Organizations now find themselves dealing with increasingly sophisticated malware threats that attack smartphones and mobile devices at the end point, and data in motion on portable storage devices are always at risk for loss and theft. Mobile device management (MDM), multi-factor authentication and end point encryption must become commonplace within the overall IT security strategy.
+
+In fact, using content-level encryption provides the best protection against most threats; a secure USB portable workspace offers a high level of protection for mobile workers, especially if authentication is required to access the content. Though it can’t stop every threat, multi-factor authentication is also definitely a good strategy and highly recommended. It should be used to protect data and access to systems.
+
+What can you do to protect your most important information?
+
+For starters, remember who you are dealing with, and design for human behavior. If it’s too difficult or slows the user down, employees will create a workaround, which most often translates to disabling security protocols.
+
+Starting with the basics, user authentication is the front line of security. If authentication is weak, it doesn’t matter how strong your encryption is, or how impenetrable the hardware is that protects the encryption key. If there is no authentication, there may as well be no encryption at all. Authentication is the “key to the key,” so to speak.
+
+Next, implement an endpoint security solution that users will abide by -- automatic encryption with minimal user decision making in the process. At the very least, your solution should provide device control, device protection, device management and data loss prevention for smartphones, tablets and USB storage devices.
+
+Finally, no device protection is complete without MDM software, where IT can audit, control and, if necessary, disable devices that will put your organization’s data in jeopardy. This should include automatic device and data encryption, data loss prevention features, offline and off network authentication controls, solutions that prevent dictionary attacks, remote kill features, forensic auditing features and user behavior policy recognition where IT is alerted if a user copies more than a certain number of files to a drive.
+
+In my opinion, mobile device security too often takes a back seat when IT takes up the challenge of securing the network. While network security and device security must work in tandem, security should start with the end point in mind.

@@ -1,0 +1,62 @@
+The best free PC optimization software 2018
+
+By Carrie Marshall, Cat Ellis April 21, 2018 Software  
+
+Tune up Windows for faster performance with these free apps
+
+Is your Windows PC running a little slowly? It's not your imagination: over time hard drives accumulate all kinds of things that slow things down. PC optimization software can't solve obsolescence – if your computer is struggling to meet the system requirements for your OS or apps that's a job for more RAM or the addition of an SSD – but if the slowdown is software-related, it can really help.
+
+It's worth noting that you can do much of what these PC optimization apps do yourself using Windows' built-in system maintenance tools, but that's time consuming; what's really being sold here is convenience.
+
+1. Iolo System Mechanic
+Enjoy a faster, cleaner PC with the best free PC optimization tool around
+
+Iolo System Mechanic removes junk files and unwanted apps, blocks bloatware and unwanted auto-run settings, clears out RAM and wipes various logs, browser histories and caches.
+
+
+
+Not only does this free up key system resources, it also eliminates traces of your browsing activity to protect your privacy.
+
+Its PC optimization toolkit really does make a difference; whenever we've tested System Mechanic we've found a significant speed improvement, especially at startup. The free edition is excellent, but the two premium versions – System Mechanic and System Mechanic Pro – are well worth considering if you find yourself using it regularly – and Iolo is offering a 70% discount with the voucher code TECHRADAR.
+
+The genuine performance boost we saw after running System Mechanic made it our favorite system optimization tool. Read on for four more of the best apps around for speeding up your Windows PC.
+
+
+2. IObit Advanced SystemCare
+A hands-off approach to optimization that's ideal for novice users
+
+IObit Advanced SystemCare comes in two forms: a free edition version that covers basic house cleaning, and a Pro version that adds internet speed-boosting, real-time optimization, privacy protection, deep registry cleaning and 24/7 technical support. That's US$20 (about £15, AU$25) for a year, and the license covers three PCs.
+
+Whichever edition you choose, IObit Advanced SystemCare's interface is well designed, easy to use and unlikely to frighten even the newest PC user. We'd deduct points for an installer that wants to add additional programs - that's hardly in keeping with the philosophy of keeping unwanted stuff off your computer - but they're easy to avoid if you choose a custom installation.
+
+Like most of the free PC optimization software here, it cleans up files and folders you don't need, neatens up the Windows registry and corrects errors on your hard drive – all via a simple, slick dashboard.
+
+3. Piriform CCleaner
+Eliminate unnecessary files, clean the registry and manage programs
+
+Piriform CCleaner has been around for a long time, and part of the reason for its ongoing popularity is that it cleans the parts of your PC that many other free system optimization tools don't.
+
+There's a paid-for version of the optimization toolkit that adds real time protection and cleanup scheduling, but the free edition of CCleaner covers the important stuff such as removing temporary files, getting rid of browser caches, removing unwanted cookies while keeping the useful ones and so on.
+
+If your PC just feels sluggish then this is the app to try first. It doesn't have all the advanced features of apps like System Mechanic, but the stuff it does clear is famous for slowing down PCs.
+
+4. Ashampoo WinOptimizer 2018
+A fast, thorough scanner plus a suite of well designed maintenance tools
+
+Ashampoo WinOptimizer 2018's biggest selling point is its flexibility – you can scan for junk files, broken registry entries and browser cookies with a single click, and erase them all with one more.
+
+Alternatively, you can dive deeper by selecting the 'Details' button to review the results of your scan one by one. Unlike some PC optimization tools, Ashampoo WinOptimizer gives you a full description of each issue it's identified, explaining exactly what it is, and why you should consider removing it. You can then make an informed decision about whether to erase or keep it.
+
+WinOptimizer also includes a suite of 'modules' for routine maintenance tasks like defragging hard drives and optimizing startup processes. These are all tasks that could be accomplished within Windows itself, but having them all in one location is much more convenient than trawling through menus.
+
+(In case you're wondering, Ashampoo takes its name from this optimization software, which cleans your PC 'like a shampoo'.)
+
+
+
+5. Razer Cortex: Game Booster
+Designed to help gamers wring extra performance from their PCs
+
+If your system struggles when you're trying to get your game on, Razer Cortex: Game Booster could well be the answer. This free PC optimization software suspends unnecessary system processes, clears out memory and defrags your system to get the very best game performance possible.
+
+Razer Cortex: Game Booster is available for Windows 7, 8 and 10, and while the differences won't make you jump up and down in astonishment - for most people the results will mean slightly smoother visuals rather than astonishing performance improvements - it does automate the fiddly process of turning off unnecessary software and services when it's time to play.
+

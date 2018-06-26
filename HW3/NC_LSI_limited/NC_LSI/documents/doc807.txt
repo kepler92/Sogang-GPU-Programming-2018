@@ -1,0 +1,52 @@
+Police rolling out technology which allows them to raid victims phones without a warrant 
+
+Police forces across country have been quietly rolling out technology which allows them to download the entire contents of victim's phone without a warrant. 
+
+At least 26 forces now use technology which allows them to to extract location data, conversations on encrypted apps, call logs, emails, text messages, photographs, passwords and internet searches among other information. 
+
+The searches can be done instantly at a local police station and are used by many forces for low level crime - regardless of whether or not someone is charged - and can be used on victims and witnesses as well as suspects. 
+
+
+The Metropolitan Police, which was the first force to introduce the extraction devices during the London 2012 Olympics, has admitted that when a single photograph is required from a victim's phone every one is downloaded. 
+
+The revelations have led to concern that it could prevent victims coming forward, particularly in domestic abuse or rape cases. 
+
+Naz Shah MP, who sits on the Home Affairs Select Committee, said:  "We have a situation where people who do not even know their data has been downloaded. 
+
+"If police want to search someones house then they have to get an arrest warrant , but there is less information in a house than on the phone, which contains crucial information about conversations."
+
+ She has called on the Government to investigate the use as a matter of urgency, adding: "We currently have no legal framework or scrutiny, which leaves people open to abuse". 
+
+Privacy campaigners are calling for a change in the law to force the police to obtain a warrant before they using extraction technology. 
+
+There are no clear rules on how long the data can be held, but a procurement document from the Met from 2015 says that it could require "maintenance for an indefinite period extending for many years". 
+
+Some forces, each of which provide different guidance, have even equipped officers with portable mobile phone extraction kits which can be used on the go. 
+
+The technology has been rolled out despite concerns raised by the Police and Crime Commissioner for North Yorkshire, who found in a review that in half of cases officers had not received authorisation to download data and potentially sensitive data was lost. 
+
+The Metropolitan Police in their instructions for using the devices admit that the kiosk will "obtain all data of a particular type, rather than just the individual data that is relevant to a particular investigation."
+
+Continuing: "For example, if a photograph on a ‘witness’ mobile phone is relevant, because it shows an offence being committed, then the kiosk will acquire all photographs on that phone, rather than just the photographs of the offence. If text messages to a victim of harassment are required to investigate the harassment allegations, then the kiosk will acquire all text messages on that phone."
+
+Wiltshire Police's guidelines, which are currently under review, note that "collateral intrusion" is "unavoidable". 
+
+Unlike a search of a home in which an inventory of confiscated possessions is provided, police are not required to inform people what data has been extracted.
+
+Though guidelines say consent should be obtained from a witness before their phone is accessed, it is possible for this need to be overridden. 
+
+A series of Freedom of Information requests by Privacy International revealed that 26 police forces are now using the technology and a further three are about to begin trials. 
+
+Their report concludes: "Traditional search practices, where no warrant is required, are wholly inappropriate for such a deeply intrusive search. 
+
+"Searching a mobile phone is not like searching a home or even a physical body search. A phone search is far more exhaustive, because of the vast amount of personal data that we now store on our devices."
+
+A Home Office spokesperson said: "The Government is committed to ensuring that police officers have the appropriate powers to tackle crime. As part of this it is important that they can, in limited circumstances, access data that may be vital to their investigations.
+
+"Current legislation allows data to be accessed when there are reasonable grounds to believe it contains evidence in relation to an offence and only then in adherence with data protection and human rights obligations.
+
+"The Government is clear that the use of all police powers must be necessary, proportionate and lawful.”
+
+The National Police Chiefs Council say that the decision to use the technology is made in a case-by-case basis and "defined by the investigative requirements of the case".
+
+Senior officers say it is not practical to obtain a warrant in each case and information is often needed quickly to prevent crime.

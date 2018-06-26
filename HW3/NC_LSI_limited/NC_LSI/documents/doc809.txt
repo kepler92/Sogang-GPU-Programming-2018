@@ -1,0 +1,32 @@
+Mobile Device Security Guidelines
+ 
+
+Background Issues:
+Mobile devices continue to expand in their popularity and usage, blending the functions of the "typical" personal computer and telephone. As these mobile devices replace the role of the traditional computer, they are exposed to an increasing number and sophistication of threats of compromise from malware, theft and loss. Unfortunately, the typical methods used to protect a personal computer are not often available for mobile devices.
+
+Purpose:
+This document provides guidance on safely using mobile devices. The rapid development and subsequent deployment of these devices precludes specific instructions so this document will provide general recommendations. You are responsible for consulting the owner/operator manual for your specific device in order to enable the specific features available on your device. Additionally, there are several excellent sources of information to assist you in securing your device; these are noted in the Additional Information section of this page.
+
+Legally/Contractually Restricted Data
+As mobile devices can be difficult to secure, you should avoid processing or storing any Legally/Contractually Restricted 1 data except where absolutely required. If you must process or store sensitive data, activate and use the PIN option to help secure the device and data.
+Should you receive a message that contains Legally/Contractually Restricted data, do not store it on the device any longer than you need to. Delete the message and empty the application's or device's trash or recycle folder.
+If the mobile device is lost or stolen and it contains sensitive or Legally/Contractually Restricted data, immediately report the loss to the University Police. If your device supports remote wiping, use this feature immediately. If you have used your Northwestern NetID/password on the device, change your NetID password immediately.
+If your device supports encryption and you regularly have Legally/Contractually Restricted data, enable the encryption option.
+Recommendations
+Be aware of your surroundings when using a mobile device. Eavesdroppers on your conversation, criminals who want your device or valuables, vehicles that may run into you, and any number of other hazards are things to be avoided.
+Keep your mobile device's software and system up to date. Mobile devices, like most computers, require regular updates in order to keep them secure and have the latest features available. Configure your device to use automatic update features, where possible.
+If you download applications or other software, don't forget to check for updates for these as well; be sure you get your downloads from reputable sources.
+Get anti-viral software for your device, and be sure to keep signatures up-to-date.
+Enable a password or personal identification number (PIN) if available. If your device supports an autolock feature (e.g., when you close the device it automatically locks until you enter the correct code), enable this feature. Be sure to avoid the 10 most common passwords:
+1234, 0000, 2580, 1111, 5555, 5683, 0852, 2222, 1212, and 1998
+Make sure that your browser security settings are configured appropriately.
+Never leave your mobile device unattended. Keep the device on your person, or within your reach, or within your sight, or in a secured location at all times.
+Enable "remote wipe" features where available. In the event the device is lost/stolen, your personal data and privacy may be at risk; wiping would make the data unreadable.
+Remember to backup your data on a regular basis.
+Use secure Wi-Fi networks and avoid unknown networks. Do not conduct personal business (e.g., pay bills, provide credit card information) using an unsecured network.
+If you have features on your device that you do not use (e.g., Bluetooth), disable those features. Set any Bluetooth device to "non-discoverable."
+As with any computing device you want to be cautious about clicking on links or returning calls or messages from unsolicited or unknown callers. Be cautious when clicking on QR (Quick Response) codes – be sure you know what the code points to.
+Avoid using jailbroken iPhones, rooted Androids and similar devices. Though usability might be enhanced, so is the likelihood that the device will be compromised; altered devices are specifically targeted by malware.
+Mobile devices are fairly reliable but susceptible to damage from being dropped, getting wet, freezing in cold car, or cooking on a hot dashboard - protect your device from the elements.
+When it's time to replace or dispose of the device, be sure to securely remove all data from the device.
+Be aware of what support and update programs are available from both your cellular service provider and phone manufacturer.

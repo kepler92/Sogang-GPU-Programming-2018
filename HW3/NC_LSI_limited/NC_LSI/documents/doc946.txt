@@ -1,0 +1,44 @@
+Building a Battery-Free Cellphone
+A prototype from the University of Washington leverages a backscattered radiofrequency wave to transmit analog signals
+By Amy Nordrum
+A close-up of a University of Washington researcher holding a prototype of a battery-free phone made from a printed circuit board.
+Photo: University of Washington
+Advertisement
+
+Editor’s Picks
+
+Apple’s and Samsung’s Changing Smartphone Recipes
+ An RFID chip using RF-only logic lacks a rectifier and its associated circuitry.
+RF-Only Logic Makes RFID Tags Tinier
+Better Mobile Phone Batteries, Please
+Batteries can be a real drag. They’re expensive and must be constantly recharged. Though some battery-free sensors can passively transmit small amounts of data, most consumer electronics today still rely on bulky batteries to store power.
+
+A team from the University of Washington has built a battery-free cellphone that can harness power from radiofrequency (RF) waves sent to it from a nearby base station. The phone not only harnesses the power it needs to operate from those waves, but can also place a voice call by modifying and reflecting the same waves back to the base station, through a technique known as backscattering.
+
+The UW team has shown their device (built from off-the-shelf components) can use harvested power to place a call from a distance of 9.4 meters away from a customized base station. They also built a version outfitted with photodiodes that collect ambient light to passively power the device, allowing them to place a call from a distance of 15.2 meters.
+
+To place or receive a call, the entire device consumes just 2 to 3 microwatts of power. The group’s design supports only voice calls—there’s no data plan—but its creators say it would still prove quite useful in certain circumstances.
+
+“Imagine a scenario where your phone died but you could at least have enough power to make a 9-1-1 call,” says Vamsi Talla, who built the phone while a post-doc in electrical engineering at the University of Washington. “That could be a lifesaver.”
+
+Many of today’s passive sensors transmit data only occasionally–perhaps every minute or so—due to power constraints. Or, in the case of RFID tags, some passive sensors must be very close to a reader to harness enough power to transmit a message.
+
+In a conference paper published earlier this month, Talla, who now serves as chief technology officer of Jeeva Wireless, and his colleagues call their design “a major leap” toward the creation of battery-free devices. Ultimately, they want to build devices that can constantly transmit or receive data and voice calls over long distances without batteries.
+
+“Now we're showing the world that a battery-free device doesn't have to be a sensor, but it can be a whole system where in real-time, you can actually do something useful,” Talla says.
+
+Raj Rajkumar, a professor in electrical engineering at Carnegie Mellon University, says the research is “another interesting step in the evolution of wireless power transmission.” He also noted that follow-up studies would need to evaluate the safety of transmitting power to mobile devices in this way.
+
+For now, the UW device only works with customized base stations within close range of the user. Being near a base station may not always be possible for users who need to place an urgent call. But Talla says this could change with the anticipated rollout of 5G networks, in which providers are expected to dramatically increase the density of base stations—at least in cities.
+
+He also expects to achieve greater distances at other frequencies. In their initial tests, the base station broadcast a single tone on the 915 megahertz frequency band to the device.
+
+To place a call, the battery-free phone uses an electret microphone to generate an analog signal. An electret microphone contains a diaphragm with a fixed electrostatic charge. Within the microphone, the diaphragm forms a capacitor with a metal plate. When a person speaks, mechanical vibrations from their voice cause the diaphragm to change shape relative to the metal plate. This affects the capacitance of the device and generates a small voltage.
+
+The microphone connects to an antenna through a RF switch. The voltage from the microphone travels to the antenna, where it directly alters the amplitude of the single tone embedded in the RF wave. The altered signal is then reflected back to the base station using backscattering techniques. These methods reduce the phone’s power consumption by three or four orders of magnitude compared to a traditional radio.   
+
+The phone’s design was inspired in part by the Great Seal Bug, a passive surveillance device planted in the desk of the U.S. Ambassador to Moscow by Russian authorities in the late 1940s. The UW phone is also half-duplex, which means a user can either listen or talk, but can’t do both at the same time. A microcontroller manages the RF switch, connecting the microphone to the antenna when a user presses a button to talk, and connecting the earphones when the user wants to listen.
+
+To minimize power consumption, the team moved much of the processing that would typically be performed on a phone to their customized base station. Smartphones today contain components that convert analog sound to digital signals before transmission, and other components that convert the digital signals received from a base station to analog sound.
+
+In the UW system, the base station performs these conversions and connects to the nationwide cellular network, forwarding calls or sending signals it receives back to the user. Talla says the group will continue to refine the technology through a licensing agreement with Jeeva Wireless.
