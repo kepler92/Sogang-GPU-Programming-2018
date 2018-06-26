@@ -23,8 +23,5 @@
     <None Include="..\fortran_files\dsvdc.f">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="..\fortran_files\dnrm2.f">
-      <Filter>소스 파일</Filter>
-    </None>
   </ItemGroup>
 </Project>

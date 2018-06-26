@@ -146,7 +146,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\fortran_files\dnrm2.f" />
     <None Include="..\fortran_files\dsvdc.f" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

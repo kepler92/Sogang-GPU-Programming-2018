@@ -17,6 +17,13 @@ extern "C" {
 #define LSI_TOP		5
 
 
+#include <Windows.h>
+#include <winnt.h>
+__int64 _start, _freq, _end;
+#define CHECK_TIME_START QueryPerformanceFrequency((LARGE_INTEGER*)&_freq); QueryPerformanceCounter((LARGE_INTEGER*)&_start)
+#define CHECK_TIME_END(a) QueryPerformanceCounter((LARGE_INTEGER*)&_end); a = (float)((float)(_end - _start) / (_freq * 1.0e-3f))
+
+
 void file_lines(const char *filename, int *length) {
 	FILE *fp = fopen(filename, "r");
 	char buffer[BUFFER_SIZE];
@@ -314,7 +321,7 @@ int main() {
     int JOB = 11;
     int INFO;
 
-	printf("LSI 불러오기 [y/n]: ");
+	printf("SVD 불러오기 [y/n]: ");
 	switch (fgetc(stdin)) {
 	case 'y':
 	case 'Y':
@@ -362,14 +369,16 @@ int main() {
 	double* uq = (double*)malloc(sizeof(double) * K * 1);
 	double* result = (double*)malloc(sizeof(double) * row);
 	int* sort = (int*)malloc(sizeof(int) * LSI_TOP);
+	float compute_time;
 
-	while (1) {		
+	while (1) {
 		printf("\n=========================\n\n");
 		printf("검색어: ");
-
 		if (read_query(Q, wordlist, row) == -1)
 			break;
-				
+		
+		CHECK_TIME_START;
+
 		matrix_multiplication(U, Q, uq, K, row, 1);
 		//print_matrix("UQ.txt", uq, K, 1);
 		
@@ -377,6 +386,9 @@ int main() {
 		//print_matrix("R.txt", result, column, 1);
 
 		maximum_vector(result, column, sort, LSI_TOP);
+
+		CHECK_TIME_END(compute_time);
+		printf(" > compute_time: %.3fms\n", compute_time);
 		
 		for (int i = 0; i < LSI_TOP; i++) {
 			int index = sort[i];
