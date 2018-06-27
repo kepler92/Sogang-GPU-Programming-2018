@@ -1,7 +1,6 @@
 #include <stdlib.h>
 
-//#define Iteration_Number 100000
-#define Iteration_Number 10000
+#define Iteration_Number 100000
 
 extern "C" {
     int dsgs_(int *n, double *b, double *x, int *nelt, int *ia, int *ja, double *a, int *isym, int *itol, double *tol, int *itmax,
@@ -43,7 +42,7 @@ void choose_data(char* filename) {
 	}
 
 	int choose;
-	printf("choose file number: ");
+	printf("Choose file number: ");
 	scanf("%d", &choose);
 
 	if (1 <= choose && choose <= FILES)
@@ -157,21 +156,22 @@ void print_X(const char* sign, double *X, int length) {
 }
 
 
-void print_INFO(const char* sign, int iter, double difference, float compute_time) {
-	printf("旨收收收收收收收收收收收收收收收收收收收收收收收收收收收旬\n");
-	printf("早 %-25s 早\n", sign);
-	printf("早式式式式式式式式式式式式式式式式式式式式式式式式式式式早\n");
-	printf("早 Total Iter: %13d 早\n", iter);
-	printf("早 Difference: %13lf 早\n", difference);
-	printf("早 Compute Time: %9.3fms 早\n", compute_time);
-	printf("曲收收收收收收收收收收收收收收收收收收收收收收收收收收收旭\n");
+void print_INFO(const char* sign, int iter, double e, double r, float compute_time) {
+	printf("旨收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旬\n");
+	printf("早 %-30s 早\n", sign);
+	printf("早式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式早\n");
+	printf("早 Total Iteration: %13d 早\n", iter);
+	printf("早 Difference e : %15lf 早\n", e);
+	printf("早 Difference r : %15lf 早\n", r);
+	printf("早 Compute Time: %14.3fms 早\n", compute_time);
+	printf("曲收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收收旭\n");
 }
 
 
-double diffence_X(double *A, double *B, int length) {
+double difference_X(double *A, double *B, int length) {
 	double* differ = (double*)malloc(sizeof(double) * length);
 	for (int i = 0; i < length; i++)
-		differ[i] = pow(A[i] - B[i], 2);
+		differ[i] = fabs(A[i] - B[i]);
 
 	for (int i = length / 2; i > 0; i >>= 1) {
 		for (int j = 0; j < i; j++) {
@@ -179,10 +179,37 @@ double diffence_X(double *A, double *B, int length) {
 		}
 	}
 
-	double result = sqrt(differ[0]);
+	double result = differ[0];
 	free(differ);
 	return result;
 }
+
+
+double difference_A(int NELT, int *IA, int *JA, double *A, int N, double *X, double *X_) {
+	double* differ = (double*)malloc(sizeof(double) * N);
+	memset(differ, 0, sizeof(double) * N);
+
+	for (int n = 0; n < NELT; n++) {
+		int i = IA[n] - 1;
+		int j = JA[n] - 1;
+		double value = A[n];
+
+		differ[i] += (
+			fabs(A[n] * X[j] - A[n] * X_[j])
+			);
+	}
+
+	for (int i = N / 2; i > 0; i >>= 1) {
+		for (int j = 0; j < i; j++) {
+			differ[j] += differ[j + 1];
+		}
+	}
+
+	double result = differ[0];
+	free(differ);
+	return result;
+}
+
 
 
 
@@ -207,11 +234,15 @@ int main() {
     int* IWORK;
     int LENIW;
 
+
 	char filename[BUFFER_SIZE];
 	choose_data(filename);
-
 	read_lines_data(filename, &N, &NELT);
-	
+
+	int iter;
+	printf("Total Interation: ");
+	scanf("%d", &iter);	
+
 
     //N;
     B = (double *)malloc(N * sizeof(double));
@@ -235,7 +266,8 @@ int main() {
 	print_X("Solution", X, PRINT_X_LENGTH);
 	
 	float time_GS, time_Jacobi;
-	double differ_GS, differ_Jacobi;
+	double differ_X_GS, differ_A_GS;
+	double differ_X_Jacobi, differ_A_Jacobi;
 	int iter_GS, iter_Jacobi;
 
 	//
@@ -255,6 +287,8 @@ int main() {
 	double *X_GSMethod = (double *)malloc(N * sizeof(double));
 	for (int i = 0; i < N; i++) X_GSMethod[i] = INIT_X_VALUE;
 	//memset(X_GSMethod, 0, N * sizeof(double));
+
+	ITMAX = iter;
 		
 	CHECK_TIME_START;
     dsgs_(&N, B, X_GSMethod, &NELT, IA_GSMethod, JA_GSMethod, A_GSMethod, &ISYM, &ITOL, &TOL, &ITMAX, &ITER, &ERR, &IERR, &IUNIT, RWORK, &LENW, IWORK, &LENIW);
@@ -264,7 +298,9 @@ int main() {
 	free(JA_GSMethod);
 	free(A_GSMethod);
 	
-	differ_GS = diffence_X(X, X_GSMethod, N); iter_GS = ITER - 1;
+	differ_X_GS = difference_X(X, X_GSMethod, N); 
+	differ_A_GS = difference_A(NELT, IA, JA, A, N, X, X_GSMethod);
+	iter_GS = ITER - 1;
 	print_X("Gauss-Seidel Method", X_GSMethod, PRINT_X_LENGTH);	
 	free(X_GSMethod);
 
@@ -278,15 +314,17 @@ int main() {
 	for (int i = 0; i < N; i++) X_JacobiMethod[i] = INIT_X_VALUE;
 
 	CHECK_TIME_START;
-	jacobi_method(N, B, X_JacobiMethod, NELT, IA, JA, A, Iteration_Number);
+	jacobi_method(N, B, X_JacobiMethod, NELT, IA, JA, A, iter);
 	CHECK_TIME_END(time_Jacobi);
 
-	differ_Jacobi = diffence_X(X, X_JacobiMethod, N); iter_Jacobi = Iteration_Number;
+	differ_X_Jacobi = difference_X(X, X_JacobiMethod, N); 
+	differ_A_Jacobi = difference_A(NELT, IA, JA, A, N, X, X_JacobiMethod);
+	iter_Jacobi = iter;
 	print_X("Jacobi Method", X_JacobiMethod, PRINT_X_LENGTH);
 	free(X_JacobiMethod);
 
-	print_INFO("Gauss-Seidel Method", iter_GS, differ_GS, time_GS);
-	print_INFO("Jacobi Method", iter_Jacobi, differ_Jacobi, time_Jacobi);
+	print_INFO("Gauss-Seidel Method", iter_GS, differ_X_GS, differ_A_GS, time_GS);
+	print_INFO("Jacobi Method", iter_Jacobi, differ_X_Jacobi, differ_A_Jacobi, time_Jacobi);
 
 
     free(B);
