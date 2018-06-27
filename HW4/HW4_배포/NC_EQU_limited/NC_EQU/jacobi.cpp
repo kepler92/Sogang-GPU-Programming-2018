@@ -17,11 +17,11 @@ void get_sigma(int N, double *B, double *X, int NELT, int *IA, int *JA, double *
 	}
 }
 
+
 void get_value(int N, double *B, double *X, double *sigma, double *a) {
 	for (int i = 0; i < N; i++)
 		X[i] = (B[i] - sigma[i]) / a[i];
 }
-
 
 
 void jacobi_method(int N, double *B, double *X, int NELT, int *IA, int *JA, double *A, int iter) {
@@ -39,6 +39,4 @@ void jacobi_method(int N, double *B, double *X, int NELT, int *IA, int *JA, doub
 	free(sigma);
 	free(a);
 }
-
-
 

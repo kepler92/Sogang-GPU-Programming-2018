@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 //#define Iteration_Number 100000
-#define Iteration_Number 5000
+#define Iteration_Number 10000
 
 extern "C" {
     int dsgs_(int *n, double *b, double *x, int *nelt, int *ia, int *ja, double *a, int *isym, int *itol, double *tol, int *itmax,
@@ -13,8 +13,11 @@ extern "C" {
 #include<string.h>
 #include<math.h>
 #include "jacobi.h"
+
 #define BUFFER_SIZE	1000
 #define FILES		4
+
+#define INIT_X_VALUE	1.0f
 #define PRINT_X_LENGTH	10
 
 
@@ -230,9 +233,16 @@ int main() {
 
 	read_matrix_data(filename, N, NELT, A, IA, JA, B, X);
 	print_X("Solution", X, PRINT_X_LENGTH);
+	
+	float time_GS, time_Jacobi;
+	double differ_GS, differ_Jacobi;
+	int iter_GS, iter_Jacobi;
 
-	double *X_GSMethod = (double *)malloc(N * sizeof(double));
-	memset(X_GSMethod, 0, N * sizeof(double));
+	//
+	//
+	// Gauss-Seidel Method
+	//
+	//
 
 	int *IA_GSMethod = (int *)malloc(NELT * sizeof(int));
 	int *JA_GSMethod = (int *)malloc(NELT * sizeof(int));
@@ -242,22 +252,30 @@ int main() {
 	memcpy(JA_GSMethod, JA, NELT * sizeof(int));
 	memcpy(A_GSMethod, A, NELT * sizeof(double));
 
-	float time_GS, time_Jacobi;
-	double differ_GS, differ_Jacobi;
-	int iter_GS, iter_Jacobi;
-
-
+	double *X_GSMethod = (double *)malloc(N * sizeof(double));
+	for (int i = 0; i < N; i++) X_GSMethod[i] = INIT_X_VALUE;
+	//memset(X_GSMethod, 0, N * sizeof(double));
+		
 	CHECK_TIME_START;
     dsgs_(&N, B, X_GSMethod, &NELT, IA_GSMethod, JA_GSMethod, A_GSMethod, &ISYM, &ITOL, &TOL, &ITMAX, &ITER, &ERR, &IERR, &IUNIT, RWORK, &LENW, IWORK, &LENIW);
 	CHECK_TIME_END(time_GS);
+
+	free(IA_GSMethod);
+	free(JA_GSMethod);
+	free(A_GSMethod);
 	
 	differ_GS = diffence_X(X, X_GSMethod, N); iter_GS = ITER - 1;
-	print_X("Gauss-Seidel Method", X_GSMethod, PRINT_X_LENGTH);
+	print_X("Gauss-Seidel Method", X_GSMethod, PRINT_X_LENGTH);	
 	free(X_GSMethod);
 
+	//
+	//
+	// Jacobi Method
+	//
+	//
 
 	double *X_JacobiMethod = (double *)malloc(N * sizeof(double));
-	memset(X_JacobiMethod, 0, N * sizeof(double));
+	for (int i = 0; i < N; i++) X_JacobiMethod[i] = INIT_X_VALUE;
 
 	CHECK_TIME_START;
 	jacobi_method(N, B, X_JacobiMethod, NELT, IA, JA, A, Iteration_Number);
