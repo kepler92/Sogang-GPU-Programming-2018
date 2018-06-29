@@ -14,8 +14,3 @@ Execution environment
 * OpenCL 1.2
   * Header: C:\usr\local\OpenCL\include
   * Library: C:\usr\local\OpenCL\lib\x86_64
-
-
-Score
----
-* 
